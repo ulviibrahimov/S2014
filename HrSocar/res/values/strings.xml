@@ -7,5 +7,7 @@
     <string name="title_activity_profile">ProfileActivity</string>
     <string name="title_activity_vacation">VacationActivity</string>
     <string name="fragment_header">ARDNŞ İnsan Resurslarının İdarə Edİlməsİ Portalı</string>
+    <string name="login">Giriş</string>
+    <string name="loginButton">Daxil ol</string>
 
 </resources>

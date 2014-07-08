@@ -23,8 +23,8 @@
             android:layout_height="fill_parent"
             android:layout_weight="0.7"
             android:gravity="center"
+            android:textColor="#A669DA"
             android:text="@string/fragment_header"
-            android:textColor="#000"
             android:textSize="20sp" />
     </LinearLayout>
 
@@ -48,7 +48,7 @@
         android:layout_height="0dp"
         android:layout_weight="0.3"
         android:layout_margin="10dp"
-        android:src="@drawable/Antonhy" />
+        android:src="@drawable/antonhy" />
         
     <LinearLayout
         android:id="@+id/ll3"
