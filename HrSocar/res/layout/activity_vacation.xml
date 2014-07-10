@@ -1,12 +1,97 @@
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context="${relativePackage}.${activityClass}" >
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent" 
+    android:orientation="vertical" >
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/hello_world" />
+     <LinearLayout
+         android:id="@+id/ll1"
+         android:layout_width="fill_parent"
+         android:layout_height="0dp"
+         android:layout_weight="0.2"
+         android:orientation="horizontal" >
+		
+		<ImageView
+		    android:id="@+id/imageView1"
+		    android:layout_width="0dp"
+		    android:layout_height="fill_parent"
+		    android:layout_weight="0.3"
+		    android:gravity="center"
+		    android:src="@drawable/socar_logo" />
 
-</RelativeLayout>
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="fill_parent"
+            android:layout_weight="0.7"
+            android:gravity="center"
+            android:text="@string/vacation_header"
+            android:textColor="#A669DA"
+            android:textSize="20sp" />
+
+	</LinearLayout>
+	
+     
+   <LinearLayout
+        android:id="@+id/ll2"
+        android:background="#A669DA"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
+        android:layout_width="fill_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.15"
+        android:orientation="horizontal" >
+
+    </LinearLayout>
+    
+   
+    <LinearLayout
+         android:id="@+id/ll3"
+         android:layout_weight="0.65"
+         android:layout_width="fill_parent"
+         android:layout_height="0dp"
+         android:orientation="horizontal"
+          >
+
+	<TableLayout
+	    android:layout_width="fill_parent"
+	    android:layout_height="fill_parent"
+	    android:stretchColumns="1" 
+	    android:weightSum="0.5">
+	    
+	    <TableRow
+	        android:background="#A669DA"
+	        android:layout_width="fill_parent"
+      		android:layout_height="0dp"
+      		android:layout_weight="0.05">
+	        
+	        <TextView
+	            android:text="@string/year"
+	            android:textColor="#FFFFFF"
+	            android:textSize="20sp"
+	            />
+	    </TableRow>
+	
+	    <TableRow 
+	        android:background="#FFFFFF"
+	        android:layout_width="fill_parent"
+      		android:layout_height="0dp"
+      		android:layout_weight="0.0075">
+	    </TableRow>
+	    
+	    <TableRow
+		 	android:background="#A669DA"
+	        android:layout_width="fill_parent"
+      		android:layout_height="0dp"
+      		android:layout_weight="0.05">
+	        <TextView
+	            android:text="@string/illness"
+	            android:textSize="20sp"
+	            android:textColor="#FFFFFF"/>
+	    
+	    </TableRow>
+    </TableLayout>
+
+	</LinearLayout>
+     
+
+	</LinearLayout>
