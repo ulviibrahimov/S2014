@@ -34,8 +34,8 @@ public class LoginActivity extends Activity {
 	    		tempPin   = (EditText)findViewById(R.id.editTextPin);
 	    		tempUrl =  "http://192.168.1.192:8585/xml/req1.php";
 	    		userObj= new Reg (tempUrl,tempEmail.getText().toString(),tempInsuirance.getText().toString(),tempPernr.getText().toString(),tempPin.getText().toString());
-	    		WebserviceRequest requestObj = new WebserviceRequest (userObj);
-	        	requestObj.makeRequest();
+	    		WebserviceRequest aTask = new WebserviceRequest ();
+	        	aTask.execute("registration",userObj.getRegUrl(),userObj.getRegEmail(),userObj.getRegInsuirance(),userObj.getRegPernr(),userObj.getRegPin());
 	        }});
 		
 	}
@@ -44,7 +44,7 @@ public class LoginActivity extends Activity {
     protected void onStart() {
         super.onStart();
         // The activity is about to become visible.
-    }
+    }	
     @Override
     protected void onResume() {
         super.onResume();
