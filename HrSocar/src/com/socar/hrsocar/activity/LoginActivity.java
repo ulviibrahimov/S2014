@@ -1,8 +1,10 @@
 package com.socar.hrsocar.activity;
 
+import java.util.HashMap;
+import java.util.Map;
+import java.util.concurrent.ExecutionException;
+
 import android.app.Activity;
-import android.content.Intent;
-import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -20,13 +22,16 @@ public class LoginActivity extends Activity {
 	private Button loginButton;
 	private String tempUrl;
 	private Reg userObj;
+	private Map<String,String> regParams; 
+	private String regResponse;
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_login);
 		loginButton=(Button)findViewById(R.id.loginButton);
 		loginButton.setOnClickListener(new OnClickListener(){
-	        @Override
+	        @SuppressWarnings("unchecked")
+			@Override
 	        public void onClick(View v) {
 	    		tempEmail   = (EditText)findViewById(R.id.editTextEmail);
 	    		tempInsuirance   = (EditText)findViewById(R.id.editTextInsuirance);
@@ -34,8 +39,20 @@ public class LoginActivity extends Activity {
 	    		tempPin   = (EditText)findViewById(R.id.editTextPin);
 	    		tempUrl =  "http://192.168.1.192:8585/xml/req1.php";
 	    		userObj= new Reg (tempUrl,tempEmail.getText().toString(),tempInsuirance.getText().toString(),tempPernr.getText().toString(),tempPin.getText().toString());
-	    		WebserviceRequest aTask = new WebserviceRequest ();
-	        	aTask.execute("registration",userObj.getRegUrl(),userObj.getRegEmail(),userObj.getRegInsuirance(),userObj.getRegPernr(),userObj.getRegPin());
+	    		regParams= new HashMap <String,String>();
+	    		regParams.put("url", userObj.getRegUrl());
+	    		regParams.put("reg_email", userObj.getRegEmail());
+	    		regParams.put("reg_insuirance", userObj.getRegInsuirance());
+	    		regParams.put("reg_pernr", userObj.getRegPernr());
+	    		regParams.put("reg_pin", userObj.getRegPin());
+	    		WebserviceRequest webserviceRequest = new WebserviceRequest ();
+	    		try {
+					regResponse=webserviceRequest.execute(regParams).get();
+				} catch (InterruptedException e) {
+					e.printStackTrace();
+				} catch (ExecutionException e) {
+					e.printStackTrace();
+				}
 	        }});
 		
 	}

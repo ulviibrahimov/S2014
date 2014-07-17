@@ -2,6 +2,7 @@ package com.socar.hrsocar.controller;
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.net.URL;
+import java.util.Map;
 
 import org.apache.http.HttpEntity;
 import org.apache.http.HttpResponse;
@@ -16,10 +17,11 @@ import android.os.AsyncTask;
 
 import com.socar.hrsocar.model.Reg;
 
-public class WebserviceRequest extends AsyncTask<String, Void,String> {
+public class WebserviceRequest extends AsyncTask<Map<String,String>, String,String> {
 	private Reg usrReg;
 	private URL regUrl;
-	private String urlString;			
+	private String urlString;
+	private String responseStr;
 	private HttpResponse regResponse;
 	public Reg getUsrReg() {
 		return usrReg;
@@ -40,11 +42,14 @@ public class WebserviceRequest extends AsyncTask<String, Void,String> {
 
 
 	@Override
-	protected String doInBackground(String... params) {
-		if (params[0]=="registration"){
-			urlString=params[1]+"?reg_email="+params[2]+"&reg_insuirance="+params[3]+
-					"&reg_pernr="+params[4]+"&reg_pin="+params[5];
-			System.out.println("url:"+urlString);
+	protected String doInBackground(Map<String,String>... params) {
+		
+		urlString=params[0].get("url")+"?";
+		for ( String key : params[0].keySet() ) {
+			if(key!="url"){
+				urlString=urlString+key+"="+params[0].get(key)+"&";
+			}
+		}
 			HttpClient httpClient = new DefaultHttpClient();  
 			HttpGet httpGet = new HttpGet(urlString);
 			try {
@@ -55,23 +60,19 @@ public class WebserviceRequest extends AsyncTask<String, Void,String> {
 			        ByteArrayOutputStream out = new ByteArrayOutputStream();
 			        entity.writeTo(out);
 			        out.close();
-			        String responseStr = out.toString();
-					System.out.println("responsestr:"+responseStr);
-			        // do something with response 
+			        responseStr = out.toString();
 			    } else {
-			        // handle bad response
 			    }
 			} catch (ClientProtocolException e) {
-				// TODO Auto-generated catch block
 				e.printStackTrace();
 			} catch (IOException e) {
-				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
-		}
-
-	
-
-	return null;
+	return responseStr;
 	}
+	
+	@Override
+    protected void onPostExecute(String result) {
+		super.onPostExecute(result);;
+        }
 }
