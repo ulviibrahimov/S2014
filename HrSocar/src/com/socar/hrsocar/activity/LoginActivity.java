@@ -72,16 +72,10 @@ public class LoginActivity extends Activity {
 	    		try {
 	    			WebserviceRequest webserviceRequest = new WebserviceRequest ();
 					regResponse=webserviceRequest.execute(regParams).get();
-					System.out.println(regResponse);
-					//progress.dismiss();
-		    		/*ProgressDialog progress = new ProgressDialog(LoginActivity.this);
-		    		progress.setTitle("Yüklənir");
-		    		progress.setMessage("Gözləyin...");
-		    		progress.show();*/
 					LoginParser loginParser = new LoginParser (regResponse);
 					loginResult=loginParser.getResult();
 					if (loginResult.equals("F")){
-						invalidAttempt.setText("yanlış istifadəçi");
+						invalidAttempt.setText("Yanlış istifadəçi");
 						invalidAttempt.setTextColor(Color.RED);
 					}
 					else if (loginResult.equals("T")){
