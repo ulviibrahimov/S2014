@@ -50,6 +50,7 @@ public class LoginParser extends DefaultHandler{
 					    }  
 				};
 				try {
+					System.out.println("xmlxml:"+inputXml);
 					saxParser.parse(new InputSource(new StringReader(inputXml)), defaultHandler);
 				} catch (IOException e) {
 					e.printStackTrace();

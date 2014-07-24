@@ -5,7 +5,10 @@ import java.util.Map;
 import java.util.concurrent.ExecutionException;
 
 import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
+import android.content.SharedPreferences.Editor;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
@@ -31,17 +34,28 @@ public class LoginActivity extends Activity {
 	private String loginResult;
 	private Map<String,String> regParams; 
 	private String regResponse;
+	public static final String MyPREFERENCES = "MyPrefs" ;
+	public static final String regPin = "pinKey"; 
+	public static final String regPernr = "pernrKey"; 
+	public static final String regInsuirance = "insuiranceKey"; 
+	public static final String regEmail = "emailKey"; 
+	SharedPreferences sharedPreferences;
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		this.requestWindowFeature(Window.FEATURE_NO_TITLE);
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_login);
+		sharedPreferences = getSharedPreferences(MyPREFERENCES, Context.MODE_PRIVATE);
+		if (sharedPreferences.contains(regPin) && sharedPreferences.contains(regPernr) | sharedPreferences.contains(regEmail) | !sharedPreferences.contains(regInsuirance)){
+			Intent profileIntent = new Intent(getApplicationContext(), ProfileActivity.class);
+			LoginActivity.this.startActivity(profileIntent);
+			finish();
+		}
 		loginButton=(Button)findViewById(R.id.loginButton);
 		loginButton.setOnClickListener(new OnClickListener(){
 	        @SuppressWarnings("unchecked")
 			@Override
 	        public void onClick(View v) {
-	        	//clear();
 	    		tempEmail   = (EditText)findViewById(R.id.editTextEmail);
 	    		tempInsuirance   = (EditText)findViewById(R.id.editTextInsuirance);
 	    		tempPernr   = (EditText)findViewById(R.id.editTextPernr);
@@ -55,9 +69,15 @@ public class LoginActivity extends Activity {
 	    		regParams.put("reg_insuirance", userObj.getRegInsuirance());
 	    		regParams.put("reg_pernr", userObj.getRegPernr());
 	    		regParams.put("reg_pin", userObj.getRegPin());
-	    		WebserviceRequest webserviceRequest = new WebserviceRequest ();
 	    		try {
+	    			WebserviceRequest webserviceRequest = new WebserviceRequest ();
 					regResponse=webserviceRequest.execute(regParams).get();
+					System.out.println(regResponse);
+					//progress.dismiss();
+		    		/*ProgressDialog progress = new ProgressDialog(LoginActivity.this);
+		    		progress.setTitle("Yüklənir");
+		    		progress.setMessage("Gözləyin...");
+		    		progress.show();*/
 					LoginParser loginParser = new LoginParser (regResponse);
 					loginResult=loginParser.getResult();
 					if (loginResult.equals("F")){
@@ -65,9 +85,10 @@ public class LoginActivity extends Activity {
 						invalidAttempt.setTextColor(Color.RED);
 					}
 					else if (loginResult.equals("T")){
-						System.out.println("here");
+						addPreferences();
 						Intent profileIntent = new Intent(getApplicationContext(), ProfileActivity.class);
 						LoginActivity.this.startActivity(profileIntent);
+						finish();
 					}
 				} catch (InterruptedException e) {
 					e.printStackTrace();
@@ -105,10 +126,28 @@ public class LoginActivity extends Activity {
     }
     
     private void clear (){
-    	tempEmail.getText().clear();
-    	tempInsuirance.getText().clear();
-		tempPernr.getText().clear();
-		tempPin.getText().clear();
-		invalidAttempt.setText("");
+    	if (tempEmail!=null)
+    		tempEmail.getText().clear();
+    	if (tempInsuirance!=null)
+    		tempInsuirance.getText().clear();
+    	if (tempPernr!=null)
+    		tempPernr.getText().clear();
+    	if (tempPin!=null)
+    		tempPin.getText().clear();
+    	if (invalidAttempt!=null)
+    		invalidAttempt.setText("");
+    }
+    
+    private void addPreferences(){
+    	String e  = tempEmail.getText().toString();
+        String pr  = tempPernr.getText().toString();
+        String p  = tempPin.getText().toString();
+        String i  = tempInsuirance.getText().toString();
+        Editor editor = sharedPreferences.edit();
+        editor.putString(regEmail, e);
+        editor.putString(regPernr, pr);
+        editor.putString(regPin, p);
+        editor.putString(regInsuirance, i);
+        editor.commit(); 
     }
 }
