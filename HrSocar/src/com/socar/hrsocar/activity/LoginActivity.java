@@ -144,4 +144,5 @@ public class LoginActivity extends Activity {
         editor.putString(regInsuirance, i);
         editor.commit(); 
     }
+    
 }

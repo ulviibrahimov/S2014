@@ -4,6 +4,8 @@ import java.util.ArrayList;
 import java.util.Arrays;
 
 import android.app.Activity;
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.os.Bundle;
 import android.view.Window;
 import android.widget.ArrayAdapter;
@@ -32,6 +34,25 @@ public class ProfileActivity extends Activity {
 	    mainListView.setAdapter( listAdapter );      
 	    
 	  }
-	 
+		@Override
+		public void onBackPressed() {
+			AlertDialog.Builder exitAlert = new AlertDialog.Builder(this);
+
+	    	exitAlert.setTitle("Çıxış");
+	    	exitAlert.setMessage("Çıxmaq istədiyinizdən əminsinizmi?");
+	    	exitAlert.setPositiveButton("Ok", new DialogInterface.OnClickListener() {
+	    	public void onClick(DialogInterface dialog, int whichButton) {
+	    		finish();
+	    		System.exit(1);
+	    	  }
+	    	});
+	        	exitAlert.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+	    	  public void onClick(DialogInterface dialog, int whichButton) {
+	    	    // Canceled.
+	    	  }
+	    	});
+
+	    	exitAlert.show();
+		}	 
 
 }

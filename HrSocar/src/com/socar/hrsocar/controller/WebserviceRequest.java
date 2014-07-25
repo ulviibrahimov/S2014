@@ -73,6 +73,6 @@ public class WebserviceRequest extends AsyncTask<Map<String,String>, String,Stri
 	
 	@Override
     protected void onPostExecute(String result) {
-		super.onPostExecute(result);;
+		super.onPostExecute(result);
         }
 }
