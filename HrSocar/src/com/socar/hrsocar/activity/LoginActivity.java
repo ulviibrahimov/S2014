@@ -1,9 +1,7 @@
 package com.socar.hrsocar.activity;
-
 import java.util.HashMap;
 import java.util.Map;
 import java.util.concurrent.ExecutionException;
-
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
@@ -17,9 +15,9 @@ import android.view.Window;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
-
 import com.socar.hrsocar.R;
 import com.socar.hrsocar.controller.WebserviceRequest;
+import com.socar.hrsocar.model.Parameters;
 import com.socar.hrsocar.model.Reg;
 import com.socar.hrsocar.parser.LoginParser;
 public class LoginActivity extends Activity {
@@ -61,7 +59,7 @@ public class LoginActivity extends Activity {
 	    		tempPernr   = (EditText)findViewById(R.id.editTextPernr);
 	    		tempPin   = (EditText)findViewById(R.id.editTextPin);
 	    		invalidAttempt=(TextView)findViewById(R.id.TextViewError);
-	    		tempUrl =  "http://192.168.1.192:8585/xml/req1.php";
+	    		tempUrl =  Parameters.getRegUrl();
 	    		userObj= new Reg (tempUrl,tempEmail.getText().toString(),tempInsuirance.getText().toString(),tempPernr.getText().toString(),tempPin.getText().toString());
 	    		regParams= new HashMap <String,String>();
 	    		regParams.put("url", userObj.getRegUrl());

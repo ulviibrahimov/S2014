@@ -1,8 +1,6 @@
 package com.socar.hrsocar.activity;
-
 import java.util.ArrayList;
 import java.util.Arrays;
-
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
@@ -10,13 +8,9 @@ import android.os.Bundle;
 import android.view.Window;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
-
 import com.socar.hrsocar.R;
-
-
 public class ProfileActivity extends Activity {
-
-	 private ListView mainListView ;
+	  private ListView mainListView ;
 	  private ArrayAdapter<String> listAdapter ;
 	  
 	  /** Called when the activity is first created. */
