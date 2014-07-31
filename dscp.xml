@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<soap-env:Envelope xmlns:soap-env="http://schemas.xmlsoap.org/soap/envelope/">
+    <soap-env:Header />
+    <soap-env:Body>
+        <n0:DisciplinaryActionsRResponse xmlns:n0="urn:sap-com:document:sap:soap:functions:mc-style">
+            <EDisciplinaryActions>
+                <item>
+                    <Begda>2013-07-01</Begda>
+                    <Endda>2013-12-31</Endda>
+                    <Reasons>Əməyin təhlükəsizliyi normalarına əməl etmədiyinə görə</Reasons>
+                    <Ysubty>Töhmət</Ysubty>
+                </item>
+                <item>
+                    <Begda>2011-08-01</Begda>
+                    <Endda>2011-08-01</Endda>
+                    <Reasons>İstehsal və texnologiya intizamını pozduğuna görə</Reasons>
+                    <Ysubty>Sonuncu xəbərdarlıqla şiddətli töhmət</Ysubty>
+                </item>
+                <item>
+                    <Begda>2011-08-01</Begda>
+                    <Endda>2011-08-01</Endda>
+                    <Reasons>Rəhbərliyin taşırığını yerinə yetirmədiyinə görə</Reasons>
+                    <Ysubty>Sonuncu xəbərdarlıqla şiddətli töhmət</Ysubty>
+                </item>
+                <item>
+                    <Begda>2013-08-01</Begda>
+                    <Endda>2014-01-31</Endda>
+                    <Reasons>İstehsal və texnologiya intizamını pozduğuna görə</Reasons>
+                    <Ysubty>Sonuncu xəbərdarlıqla şiddətli töhmət</Ysubty>
+                </item>
+                <item>
+                    <Begda>2013-09-01</Begda>
+                    <Endda>2014-02-28</Endda>
+                    <Reasons>İstehsal və texnologiya intizamını pozduğuna görə</Reasons>
+                    <Ysubty>Sonuncu xəbərdarlıqla şiddətli töhmət</Ysubty>
+                </item>
+                <item>
+                    <Begda>2013-09-10</Begda>
+                    <Endda>2014-02-28</Endda>
+                    <Reasons>Heç bir üzürlü səbəb olmadan bütün iş günü işə gəlmədiyinə görə</Reasons>
+                    <Ysubty>Aylıq əmək haqqının 1/4-i cərimə</Ysubty>
+                </item>
+            </EDisciplinaryActions>
+        </n0:DisciplinaryActionsRResponse>
+    </soap-env:Body>
+</soap-env:Envelope>
