@@ -4,11 +4,15 @@ import java.util.Arrays;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.Window;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import com.socar.hrsocar.R;
+import android.view.View;
+import android.widget.AdapterView.OnItemClickListener;
+import android.widget.AdapterView;
 public class ProfileActivity extends Activity {
 	  private ListView mainListView ;
 	  private ArrayAdapter<String> listAdapter ;
@@ -26,8 +30,21 @@ public class ProfileActivity extends Activity {
 	    planetList.addAll( Arrays.asList(planets) );
 	    listAdapter = new ArrayAdapter<String>(this, R.layout.simplerow, planetList);
 	    mainListView.setAdapter( listAdapter );      
-	    
+	    mainListView.setOnItemClickListener(new OnItemClickListener() {
+	        public void onItemClick(AdapterView<?> parent, View view,
+	                int position, long id) {
+	        	switch(position){
+	        	case 2: 
+	        		Intent dscpIntent = new Intent(getApplicationContext(), DisciplinaryActivity.class);
+					ProfileActivity.this.startActivity(dscpIntent);
+					break;
+	        	}
+	        }
+	    });
+	
 	  }
+	  
+
 		@Override
 		public void onBackPressed() {
 			AlertDialog.Builder exitAlert = new AlertDialog.Builder(this);

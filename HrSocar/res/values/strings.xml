@@ -14,8 +14,10 @@
     <string name="year">İllik məzuniyyət</string>
     <string name="illness">Xəstəlik məzuniyyəti</string>
     <string name="id">Şəxsiyyət vəsiqəsinin pin kodu</string>
-	<string name = "social">Sosial sığorta kartının nömrəsi</string>
-    <string name = "tabel">Tabel nömrəsi</string>
-    <string name = "email">SAP-da yadda saxlanılmış email</string>
-    
+    <string name="social">Sosial sığorta kartının nömrəsi</string>
+    <string name="tabel">Tabel nömrəsi</string>
+    <string name="email">SAP-da yadda saxlanılmış email</string>
+    <string name="title_activity_disciplinary">DisciplinaryActivity</string>
+    <string name="hello_world">Hello world!</string>
+
 </resources>
