@@ -24,6 +24,9 @@ public class DisciplinaryActivity extends Activity {
 	SharedPreferences sharedPreferences;
 	private String dscpPernr;
 	private String dscpResponse;
+	private String[] tempChildValues;
+	private List<String[]> childValues=new ArrayList<String[]>();
+	private List<String> groupValues=new ArrayList<String>();
 	private List<String> ExpandableChildren;
 	private List<DscpItem> dscpItemList= new ArrayList<DscpItem>();
 	private Map<String,String> dscpParams;
@@ -32,7 +35,6 @@ public class DisciplinaryActivity extends Activity {
 	public static final String dscpPernrKey = "pernrKey"; 
 	public static final String MyPREFERENCES = "MyPrefs" ;
     final Context context = this;
-    private static final String[][] data = {{"audia4","audiq7","audir8"},{"bmwm6","bmwx6"},{"ferrarienzo","ferrarif430","ferrarif430italia"}};
     private ExpandableListView expandableListView;
 	@SuppressWarnings("unchecked")
 	@Override
@@ -52,8 +54,16 @@ public class DisciplinaryActivity extends Activity {
 			dscpResponse=webserviceRequest.execute(dscpParams).get();
 			DisciplinaryParser disciplinaryParser = new DisciplinaryParser (dscpResponse);
 			dscpItemList=disciplinaryParser.getResult();
+	        for (int i=0;i<dscpItemList.size();i++){
+	        	tempChildValues=new String[3];
+	        	tempChildValues[0]=dscpItemList.get(i).getResult();
+	        	tempChildValues[1]=dscpItemList.get(i).getStartDate();
+	        	tempChildValues[2]=dscpItemList.get(i).getEndDate();
+	        	childValues.add(tempChildValues);
+	        	groupValues.add(dscpItemList.get(i).getReason());
+	        }
 			expandableListView = (ExpandableListView)findViewById(R.id.expandableListView1);
-	        expandableListView.setAdapter(new DscpExpandableListAdapter(context, this, dscpItemList));
+	        expandableListView.setAdapter(new DscpExpandableListAdapter(context, this, childValues,groupValues));
 		} catch (InterruptedException e) {
 			e.printStackTrace();
 		} catch (ExecutionException e) {

@@ -16,31 +16,20 @@ import android.widget.ExpandableListAdapter;
 
 public class DscpExpandableListAdapter extends BaseExpandableListAdapter implements ExpandableListAdapter  {
     public Context context;
-    private String[] tempValues;
     private LayoutInflater vi;
-    private String[][] data;
-    private List<DscpItem> dscpItemList= new ArrayList<DscpItem>();
-    private int x=0;
+    private List<String[]> childList;
+    private List<String> groupList;
     private static final int GROUP_ITEM_RESOURCE = R.layout.custom_expandable;
     private static final int CHILD_ITEM_RESOURCE = R.layout.expandandable_child;
-    public DscpExpandableListAdapter(Context context, Activity activity, List<DscpItem> dscpItemList) {
-    	//TODO fix this!!!
-    	data=new String[6][3];
-        for (int i=0;i<dscpItemList.size();i++){
-        	tempValues=new String[3];
-        	tempValues[0]=dscpItemList.get(i).getResult();
-        	tempValues[1]=dscpItemList.get(i).getStartDate();
-        	tempValues[2]=dscpItemList.get(i).getEndDate();
-        	this.data[x++]=tempValues;
-        }
-        x=0;
-        this.dscpItemList=dscpItemList;
+    public DscpExpandableListAdapter(Context context, Activity activity, List<String[]> childValues, List<String> groupList) {
+    	this.childList=childValues;
+    	this.groupList=groupList;
         this.context = context;
         vi = (LayoutInflater) activity.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
     }
 
     public String getChild(int groupPosition, int childPosition) {
-        return data[groupPosition][childPosition];
+        return childList.get(groupPosition)[childPosition];
     }
 
     public long getChildId(int groupPosition, int childPosition) {
@@ -48,7 +37,7 @@ public class DscpExpandableListAdapter extends BaseExpandableListAdapter impleme
     }
 
     public int getChildrenCount(int groupPosition) {
-        return data[groupPosition].length;
+        return childList.get(groupPosition).length;
     }
 
     public View getChildView(int groupPosition, int childPosition, boolean isLastChild, View convertView, ViewGroup parent) {
@@ -65,7 +54,7 @@ public class DscpExpandableListAdapter extends BaseExpandableListAdapter impleme
         return "group-" + groupPosition;
     }
     public int getGroupCount() {
-        return data.length;
+        return childList.size();
     }
     public long getGroupId(int groupPosition) {
         return groupPosition;
@@ -73,16 +62,11 @@ public class DscpExpandableListAdapter extends BaseExpandableListAdapter impleme
     public View getGroupView(int groupPosition, boolean isExpanded, View convertView, ViewGroup parent) {
         View v = convertView;
         String group = null;
-        if (groupPosition<dscpItemList.size())
-        	group=dscpItemList.get(groupPosition).getReason().toString();
+        group=groupList.get(groupPosition);
         if (group != null) {
             v = vi.inflate(GROUP_ITEM_RESOURCE, null);
             ViewHolder holder = new ViewHolder(v);
             holder.text.setText(Html.fromHtml(group));
-        }
-        else if (group==null){
-        	v = vi.inflate(GROUP_ITEM_RESOURCE, null);
-        	v.setVisibility(View.GONE);
         }
         return v;
     }
