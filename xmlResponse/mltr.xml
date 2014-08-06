@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<soap-env:Envelope xmlns:soap-env="http://schemas.xmlsoap.org/soap/envelope/">
+    <soap-env:Header />
+    <soap-env:Body>
+        <n0:MilitaryInfoRResponse xmlns:n0="urn:sap-com:document:sap:soap:functions:mc-style">
+            <EMilitaryInfo>
+                <item>
+                    <Series>AO</Series>
+                    <IdNumber>5555555</IdNumber>
+                    <IssueDate>2002-06-22</IssueDate>
+                    <ExpiryDate>2003-05-20</ExpiryDate>
+                    <Fit>Yararli</Fit>
+                    <Group>baş çavuş</Group>
+                    <Category>l</Category>
+                    <Staff />
+                    <Rank>çavuş</Rank>
+                    <EducationInfo>
+                        <item>
+                            <EduInstitution>Azərbaycan Dövlət Neft Akademiyası</EduInstitution>
+                            <Yfsccd>avtomatlaşdırılmış sistemlərin və hesablama texnikasının proqram təminatı</Yfsccd>
+                            <Major>avtomatlaşdırılmış sistemlərin və hesablama texnikasının proqram təminatı</Major>
+                        </item>
+                    </EducationInfo>
+                </item>
+            </EMilitaryInfo>
+        </n0:MilitaryInfoRResponse>
+    </soap-env:Body>
+</soap-env:Envelope>

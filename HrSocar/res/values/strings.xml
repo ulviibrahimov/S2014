@@ -19,5 +19,7 @@
     <string name="email">SAP-da yadda saxlanılmış email</string>
     <string name="title_activity_disciplinary">DisciplinaryActivity</string>
     <string name="hello_world">Hello world!</string>
+    <string name="title_activity_military">MilitaryActivity</string>
+    <string name="dscp">İntizam tənbehləri</string>
 
 </resources>

@@ -38,6 +38,10 @@ public class ProfileActivity extends Activity {
 	        		Intent dscpIntent = new Intent(getApplicationContext(), DisciplinaryActivity.class);
 					ProfileActivity.this.startActivity(dscpIntent);
 					break;
+	        	case 5:
+	        		Intent mltrIntent = new Intent(getApplicationContext(), MilitaryActivity.class);
+					ProfileActivity.this.startActivity(mltrIntent);
+					break;
 	        	}
 	        }
 	    });
