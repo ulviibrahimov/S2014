@@ -34,6 +34,10 @@ public class ProfileActivity extends Activity {
 	        public void onItemClick(AdapterView<?> parent, View view,
 	                int position, long id) {
 	        	switch(position){
+	        	case 1:
+	        		Intent fmlIntent = new Intent(getApplicationContext(), FamilyActivity.class);
+					ProfileActivity.this.startActivity(fmlIntent);
+					break;
 	        	case 2: 
 	        		Intent dscpIntent = new Intent(getApplicationContext(), DisciplinaryActivity.class);
 					ProfileActivity.this.startActivity(dscpIntent);
@@ -42,6 +46,7 @@ public class ProfileActivity extends Activity {
 	        		Intent mltrIntent = new Intent(getApplicationContext(), MilitaryActivity.class);
 					ProfileActivity.this.startActivity(mltrIntent);
 					break;
+					
 	        	}
 	        }
 	    });

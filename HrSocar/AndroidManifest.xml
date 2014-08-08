@@ -38,8 +38,12 @@
             android:label="@string/title_activity_disciplinary" >
         </activity>
         <activity
-            android:name="com.socar.hrsocar.activity.MilitaryActivity"
+            android:name=".activity.MilitaryActivity"
             android:label="@string/title_activity_military" >
+        </activity>
+        <activity
+            android:name="com.socar.hrsocar.activity.FamilyActivity"
+            android:label="@string/title_activity_family" >
         </activity>
     </application>
 

@@ -4,7 +4,7 @@ public class Parameters {
 	private static String regUrl = "http://192.168.1.192:8585/xml/req1.php";
 	private static String dscpUrl="http://192.168.1.192:8585/xml/dscp.php";
 	private static String mltrUrl="http://192.168.1.192:8585/xml/mltr.php";
-	
+	private static String fmlUrl ="http://192.168.1.192:8585/xml/fml.php";
 	public static String getRegUrl() {
 		return Parameters.regUrl;
 	}
@@ -16,4 +16,9 @@ public class Parameters {
 	public static String getMltrUrl() {
 		return Parameters.mltrUrl;
 	}
+
+	public static String getFmlUrl() {
+		return Parameters.fmlUrl;
+	}
+
 }

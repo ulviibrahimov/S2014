@@ -21,5 +21,6 @@
     <string name="hello_world">Hello world!</string>
     <string name="title_activity_military">MilitaryActivity</string>
     <string name="dscp">İntizam tənbehləri</string>
+    <string name="title_activity_family">FamilyActivity</string>
 
 </resources>
