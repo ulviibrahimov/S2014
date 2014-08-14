@@ -22,5 +22,13 @@
     <string name="title_activity_military">MilitaryActivity</string>
     <string name="dscp">İntizam tənbehləri</string>
     <string name="title_activity_family">FamilyActivity</string>
+    <string name="fml">Ailə üzvləri haqqında</string>
+    <string name="title_activity_personal">PersonalActivity</string>
+    <string name="title_activity_work">WorkActivity</string>
+    <string name="prsnl">Şəxsiyyət vəsiqəsi</string>
+    <string name="mltr">Hərbi bilet</string>
+    <string name="title_activity_main">MainActivity</string>
+    <string name="title_activity_education">EducationActivity</string>
+    <string name="ed">Təhsil</string>
 
 </resources>

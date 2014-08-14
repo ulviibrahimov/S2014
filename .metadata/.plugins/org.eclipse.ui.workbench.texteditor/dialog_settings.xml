@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
+		<item value="false" key="isRegEx"/>
+		<item value="ExpiryDate" key="selection"/>
+		<item value="false" key="casesensitive"/>
+		<item value="false" key="incremental"/>
+		<item value="true" key="wrap"/>
+		<item value="false" key="wholeword"/>
+		<list key="findhistory">
+			<item value="dateOfBirth"/>
+			<item value="fathersname"/>
+			<item value="fathername"/>
+			<item value="lastname"/>
+			<item value="firstname"/>
+			<item value="birthdayTag"/>
+			<item value="fatherNameTag"/>
+			<item value="lastNameTag"/>
+		</list>
+		<list key="replacehistory">
+			<item value="ExpiryDate"/>
+			<item value="issueDate"/>
+			<item value="idNumber"/>
+			<item value="series"/>
+			<item value="expiryDateTag"/>
+			<item value="issueDateTag"/>
+			<item value="idNumberTag"/>
+			<item value="seriesTag"/>
+		</list>
+	</section>
+	<section name="org.eclipse.ui.texteditor.FindReplaceDialog_dialogBounds">
+		<item value="330" key="DIALOG_WIDTH"/>
+		<item value="1|Ubuntu|11.0|0|GTK|1|" key="DIALOG_FONT_NAME"/>
+		<item value="456" key="DIALOG_HEIGHT"/>
+		<item value="24" key="DIALOG_X_ORIGIN"/>
+		<item value="183" key="DIALOG_Y_ORIGIN"/>
+	</section>
+</section>

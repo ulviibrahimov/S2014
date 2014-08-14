@@ -57,9 +57,9 @@ public class DisciplinaryActivity extends Activity {
 			if (dscpItemList !=null){
 		        for (int i=0;i<dscpItemList.size();i++){
 		        	tempChildValues=new String[3];
-		        	tempChildValues[0]=dscpItemList.get(i).getResult();
-		        	tempChildValues[1]=dscpItemList.get(i).getStartDate();
-		        	tempChildValues[2]=dscpItemList.get(i).getEndDate();
+		        	tempChildValues[0]=Parameters.getDscpYsubtyLabel()+dscpItemList.get(i).getResult();
+		        	tempChildValues[1]=Parameters.getDscpStartDateLabel()+dscpItemList.get(i).getStartDate();
+		        	tempChildValues[2]=Parameters.getDscpEndDateLabel()+dscpItemList.get(i).getEndDate();
 		        	childValues.add(tempChildValues);
 		        	groupValues.add(dscpItemList.get(i).getReason());
 		        }

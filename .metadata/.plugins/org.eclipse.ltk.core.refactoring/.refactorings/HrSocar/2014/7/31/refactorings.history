@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Move element &apos;DisciplinaryActivity.java&apos; to &apos;HrSocar/src/com.socar.hrsocar.activity&apos;&#x0A;- Original project: &apos;HrSocar&apos;&#x0A;- Destination element: &apos;HrSocar/src/com.socar.hrsocar.activity&apos;&#x0A;- Original element: &apos;com.socar.hrsocar.DisciplinaryActivity.java&apos;&#x0A;- Update references to refactored element" description="Move compilation unit" destination="/src&lt;com.socar.hrsocar.activity" element1="/src&lt;com.socar.hrsocar{DisciplinaryActivity.java" files="0" flags="589830" folders="0" id="org.eclipse.jdt.ui.move" patterns="*" policy="org.eclipse.jdt.ui.moveResources" qualified="false" references="true" stamp="1406797281419" units="1" version="1.0"/>
+</session>

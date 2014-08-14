@@ -25,7 +25,7 @@ public class ProfileActivity extends Activity {
 	    setContentView(R.layout.activity_profile); 
 	    mainListView = (ListView) findViewById( R.id.mainListView );
 	    String[] planets = new String[] { "İşdə olmamaları haqqında məlumat", "Ailə üzvləri haqqında", "İntizam tənbehləri", "Şəxsiyyət vəsiqəsi",
-	                                      "Əmək fəaliyyəti haqqında", "Hərbi bilet", "Əmək haqqı", "Məzuniyyət"};  
+	                                      "Əmək fəaliyyəti haqqında", "Hərbi bilet", "Təhsil","Əmək haqqı"};  
 	    ArrayList<String> planetList = new ArrayList<String>();
 	    planetList.addAll( Arrays.asList(planets) );
 	    listAdapter = new ArrayAdapter<String>(this, R.layout.simplerow, planetList);
@@ -41,6 +41,10 @@ public class ProfileActivity extends Activity {
 	        	case 2: 
 	        		Intent dscpIntent = new Intent(getApplicationContext(), DisciplinaryActivity.class);
 					ProfileActivity.this.startActivity(dscpIntent);
+					break;
+	        	case 3: 
+	        		Intent prsnlIntent = new Intent(getApplicationContext(), PersonalActivity.class);
+					ProfileActivity.this.startActivity(prsnlIntent);
 					break;
 	        	case 5:
 	        		Intent mltrIntent = new Intent(getApplicationContext(), MilitaryActivity.class);

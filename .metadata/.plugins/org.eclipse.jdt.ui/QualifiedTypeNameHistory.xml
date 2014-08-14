@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+<fullyQualifiedTypeName name="android.R"/>
+<fullyQualifiedTypeName name="com.socar.hrsocar.enums.regType"/>
+<fullyQualifiedTypeName name="android.widget.Button"/>
+<fullyQualifiedTypeName name="android.view.View.OnClickListener"/>
+<fullyQualifiedTypeName name="com.socar.hrsocar.controller.WebserviceRequest"/>
+<fullyQualifiedTypeName name="org.xml.sax.Attributes"/>
+<fullyQualifiedTypeName name="com.socar.hrsocar.R"/>
+<fullyQualifiedTypeName name="com.socar.hrsocar.R.id"/>
+<fullyQualifiedTypeName name="android.content.res.ColorStateList"/>
+<fullyQualifiedTypeName name="android.graphics.Color"/>
+<fullyQualifiedTypeName name="android.os.AsyncTask"/>
+<fullyQualifiedTypeName name="android.os.AsyncTask.Status"/>
+<fullyQualifiedTypeName name="android.content.Context"/>
+<fullyQualifiedTypeName name="android.widget.AdapterView"/>
+<fullyQualifiedTypeName name="android.view.View"/>
+<fullyQualifiedTypeName name="com.socar.hrsocar.model.Parameters"/>
+<fullyQualifiedTypeName name="com.socar.hrsocar.R.layout"/>
+<fullyQualifiedTypeName name="com.socar.hrsocar.adapter.DscpExpandableListAdapter"/>
+<fullyQualifiedTypeName name="com.socar.hrsocar.model.FmlItem"/>
+<fullyQualifiedTypeName name="com.socar.hrsocar.model.PrsnlItem"/>
+<fullyQualifiedTypeName name="java.util.ArrayList"/>
+<fullyQualifiedTypeName name="java.util.List"/>
+</qualifiedTypeNameHistroy>

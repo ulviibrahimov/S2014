@@ -1,0 +1,33 @@
+package com.socar.hrsocar.model;
+
+public class MltrItem {
+	private String eduInstitution;
+	private String yfsccd;
+	private String major;
+	public MltrItem() {
+		super();
+		this.eduInstitution = null;
+		this.yfsccd = null;
+		this.major = null;
+	}
+	
+	public String getEduInstitution() {
+		return eduInstitution;
+	}
+	public void setEduInstitution(String eduInstitution) {
+		this.eduInstitution = eduInstitution;
+	}
+	public String getYfsccd() {
+		return yfsccd;
+	}
+	public void setYfsccd(String yfsccd) {
+		this.yfsccd = yfsccd;
+	}
+	public String getMajor() {
+		return major;
+	}
+	public void setMajor(String major) {
+		this.major = major;
+	}
+	
+}

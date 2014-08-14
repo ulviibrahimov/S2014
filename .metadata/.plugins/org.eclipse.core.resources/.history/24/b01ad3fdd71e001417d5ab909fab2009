@@ -1,0 +1,71 @@
+package com.socar.hrsocar.activity;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
+import android.app.Activity;
+import android.content.Context;
+import android.content.SharedPreferences;
+import android.os.Bundle;
+import android.view.Window;
+
+import com.socar.hrsocar.R;
+import com.socar.hrsocar.controller.WebserviceRequest;
+import com.socar.hrsocar.model.FmlItem;
+import com.socar.hrsocar.model.Parameters;
+import com.socar.hrsocar.parser.FamilyParser;
+
+public class FamilyActivity extends Activity {
+
+	SharedPreferences sharedPreferences;
+	private String fmlPernr;
+	private String[] tempChildValues;
+	private String fmlResponse;
+	private Int fmlItemListSize;
+	private List<FmlItem> fmlItemList= new ArrayList<FmlItem>();
+	private Map<String,String> fmlParams;
+	public static final String fmlPernrKey = "pernrKey"; 
+	public static final String MyPREFERENCES = "MyPrefs" ;
+	
+	@SuppressWarnings("unchecked")
+	@Override
+	protected void onCreate(Bundle savedInstanceState) {
+		super.onCreate(savedInstanceState);
+		this.requestWindowFeature(Window.FEATURE_NO_TITLE);
+		setContentView(R.layout.activity_family);
+		try {
+			fmlParams= new HashMap <String,String>();
+			sharedPreferences = getSharedPreferences(MyPREFERENCES, Context.MODE_PRIVATE);
+			fmlPernr=sharedPreferences.getString(fmlPernrKey, null);
+			fmlParams.put("url", Parameters.getFmlUrl());
+			fmlParams.put("fml_pernr", fmlPernr);
+			WebserviceRequest webserviceRequest = new WebserviceRequest ();
+			fmlResponse=webserviceRequest.execute(fmlParams).get();
+			System.out.println("fmlrr"+fmlResponse);
+			FamilyParser familyParser = new FamilyParser (fmlResponse);
+			fmlItemList = familyParser.getResult();
+			fmlItemListSize=fmlItemList.size();
+			int x=0;
+			if (fmlItemList !=null){
+		        for (int i=0;i<fmlItemList.size();i++){
+		        	if 
+		        	tempChildValues=new String[fmlItemList.size()-1];
+		        	tempChildValues[0]=fmlItemList.get(i).getFirstName();
+		        	tempChildValues[1]=fmlItemList.get(i).getLastName();
+		        	tempChildValues[2]=fmlItemList.get(i).getFatherName();
+		        	tempChildValues[3]=fmlItemList.get(i).getBirthday();
+		        	childValues.add(tempChildValues);
+		        	groupValues.add(dscpItemList.get(i).getReason());
+		        }
+			
+			expandableListView = (ExpandableListView)findViewById(R.id.expandableListView1);
+	        expandableListView.setAdapter(new DscpExpandableListAdapter(context, this, childValues,groupValues));
+		} catch (InterruptedException e) {
+			e.printStackTrace();
+		} catch (ExecutionException e) {
+			e.printStackTrace();
+		}
+	}
+}

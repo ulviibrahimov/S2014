@@ -42,8 +42,24 @@
             android:label="@string/title_activity_military" >
         </activity>
         <activity
-            android:name="com.socar.hrsocar.activity.FamilyActivity"
+            android:name=".activity.FamilyActivity"
             android:label="@string/title_activity_family" >
+        </activity>
+        <activity
+            android:name=".activity.PersonalActivity"
+            android:label="@string/title_activity_personal" >
+        </activity>
+        <activity
+            android:name=".activity.WorkActivity"
+            android:label="@string/title_activity_work" >
+        </activity>
+        <activity
+            android:name=".MainActivity"
+            android:label="@string/title_activity_main" >
+        </activity>
+        <activity
+            android:name="com.socar.hrsocar.activity.EducationActivity"
+            android:label="@string/title_activity_education" >
         </activity>
     </application>
 

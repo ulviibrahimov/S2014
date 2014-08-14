@@ -136,4 +136,3 @@ public class DisciplinaryParser extends DefaultHandler{
 		return dscpItemList;
 	}
 }
-

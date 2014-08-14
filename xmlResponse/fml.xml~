@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<soap-env:Envelope xmlns:soap-env="http://schemas.xmlsoap.org/soap/envelope/">
+    <soap-env:Header />
+    <soap-env:Body>
+        <n0:FamilyInfoRResponse xmlns:n0="urn:sap-com:document:sap:soap:functions:mc-style">
+            <EChildInfo>
+                <item>
+                    <FirstName>Cemile</FirstName>
+                    <LastName>Əliyeva</LastName>
+                    <FathersName />
+                    <DateOfBirth>2001-03-04</DateOfBirth>
+                </item>
+                <item>
+                    <FirstName>Aysel</FirstName>
+                    <LastName>Əliyeva</LastName>
+                    <FathersName />
+                    <DateOfBirth>2002-03-04</DateOfBirth>
+                </item>
+            </EChildInfo>
+            <ESpouseInfo>
+                <item>
+                    <FirstName>Ramin</FirstName>
+                    <LastName>Əliyev</LastName>
+                    <FathersName />
+                    <DateOfBirth>1950-02-01</DateOfBirth>
+                </item>
+            </ESpouseInfo>
+        </n0:FamilyInfoRResponse>
+    </soap-env:Body>
+</soap-env:Envelope>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<soap-env:Envelope xmlns:soap-env="http://schemas.xmlsoap.org/soap/envelope/">
+    <soap-env:Header />
+    <soap-env:Body>
+        <n0:PersonalInfoRResponse xmlns:n0="urn:sap-com:document:sap:soap:functions:mc-style">
+            <EPersonalInfo>
+                <ID_SERIAL_NUMBER>AZE № 11115555</ID_SERIAL_NUMBER>
+                <ID_ISSUANCE_DATE>01.02.2008</ID_ISSUANCE_DATE>
+                <ID_ISSUING_AUTHORITY>Asan 2-2</ID_ISSUING_AUTHORITY>
+                <EXPIRATION_DATE>2015-01-01</EXPIRATION_DATE>
+                <ID_PIN_CODE>3D5O777</ID_PIN_CODE>
+            </EPersonalInfo>
+        </n0:PersonalInfoRResponse>
+    </soap-env:Body>
+</soap-env:Envelope>

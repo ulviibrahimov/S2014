@@ -1,0 +1,16 @@
+package com.socar.hrsocar.model;
+
+public class FmlItem {
+	private String firstName;
+	private String lastName;
+	private String fatherName;
+	private String type; //child or spouse
+	private FmlItem() {
+		super();
+		this.firstName=null;
+		this.lastName=null;
+		this.fatherName=null;
+		this.type =null;
+	}
+
+}

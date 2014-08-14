@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">HrSocar</string>
+    <string name="title_activity_login">LoginActivity</string>
+    <string name="my_profile">Mənim profilim</string>
+    <string name="detailed_info"> Atraflı məlumat</string>
+    <string name="title_activity_profile">ProfileActivity</string>
+    <string name="title_activity_vacation">VacationActivity</string>
+    <string name="fragment_header">ARDNŞ İnsan Resurslarının İdarə Edİlməsİ Portalı</string>
+    <string name="login">Giriş</string>
+    <string name="loginButton">Daxil ol</string>
+    <string name="vacation_header">İşdə olmamaları haqqında məlumat </string>
+    <string name="year">İllik məzuniyyət</string>
+    <string name="illness">Xəstəlik məzuniyyəti</string>
+    <string name="id">Şəxsiyyət vəsiqəsinin pin kodu</string>
+    <string name="social">Sosial sığorta kartının nömrəsi</string>
+    <string name="tabel">Tabel nömrəsi</string>
+    <string name="email">SAP-da yadda saxlanılmış email</string>
+    <string name="title_activity_disciplinary">DisciplinaryActivity</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="title_activity_military">MilitaryActivity</string>
+    <string name="dscp">İntizam tənbehləri</string>
+    <string name="title_activity_family">FamilyActivity</string>
+    <string name="fml">Ailə üzvləri haqqında</string>
+    <string name="title_activity_personal">PersonalActivity</string>
+    <string name="title_activity_work">WorkActivity</string>
+    <string name="prsnl">Şəxsiyyət vəsiqəsi</string>
+
+</resources>
