@@ -50,6 +50,10 @@ public class ProfileActivity extends Activity {
 	        		Intent mltrIntent = new Intent(getApplicationContext(), MilitaryActivity.class);
 					ProfileActivity.this.startActivity(mltrIntent);
 					break;
+	        	case 6:
+	        		Intent edIntent = new Intent(getApplicationContext(), EducationActivity.class);
+					ProfileActivity.this.startActivity(edIntent);
+					break;
 					
 	        	}
 	        }

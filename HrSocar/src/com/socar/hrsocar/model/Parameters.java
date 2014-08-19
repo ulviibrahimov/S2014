@@ -8,6 +8,7 @@ public class Parameters {
 	private static String fmlUrl ="http://192.168.1.192:8585/xml/fml.php";
 	private static String prsnlUrl ="http://192.168.1.192:8585/xml/prsnl.php";
 	private static String wrkUrl ="http://192.168.1.192:8585/xml/wrk.php";
+	private static String edUrl="http://192.168.1.192:8585/xml/ed.php";
 	
 	//Parameters for FamilyActivity
 	private static String fmlNameLabel="- Ad: ";
@@ -37,6 +38,20 @@ public class Parameters {
 	private static String mltrCategoryLabel="- Kateqoriya: ";
 	private static String mltrStaffLabel="- Heyət: ";
 	private static String mltrRankLabel="- Rütbə: ";
+	
+	//Parameters for Education activity
+	private static String edBegdaLabel ="- Başlama tarixi: ";
+	private static String edEnddaLabel="- Bitmə tarixi: ";
+	private static String edCountryLabel="- Ölkə: ";
+	private static String edScientificDegreeLabel="- Elmi dərəcə: ";
+	private static String edEduDegreeLabel="- Təhsil: ";
+	private static String edDocumentTypeLabel="- Sənəd: ";
+	private static String edFinalGradeLabel="- Qiymət: ";
+	private static String edEduInstitutionLabel="- Təhsil müəssisəsi: ";
+	private static String edIstigametLabel="- İstiqamət: ";
+	private static String edMajorLabel="- İxtisas: ";
+	private static String edEduTypeLabel="- Təhsil forması: ";
+	private static String edDipNumLabel="- Diplom nömrəsi: ";
 	public static String getRegUrl() {
 		return Parameters.regUrl;
 	}
@@ -151,5 +166,56 @@ public class Parameters {
 	public static void setMltrRankLabel(String mltrRankLabel) {
 		Parameters.mltrRankLabel = mltrRankLabel;
 	}
+	public static String getEdUrl() {
+		return Parameters.edUrl;
+	}
+
+	public static String getEdBegdaLabel() {
+		return edBegdaLabel;
+	}
+
+	public static String getEdEnddaLabel() {
+		return edEnddaLabel;
+	}
+
+	public static String getEdCountryLabel() {
+		return edCountryLabel;
+	}
+	public static String getEdScientificDegreeLabel() {
+		return edScientificDegreeLabel;
+	}
+
+	public static String getEdEduDegreeLabel() {
+		return edEduDegreeLabel;
+	}
+
+	public static String getEdDocumentTypeLabel() {
+		return edDocumentTypeLabel;
+	}
+	public static String getEdFinalGradeLabel() {
+		return edFinalGradeLabel;
+	}
+
+	public static String getEdEduInstitutionLabel() {
+		return edEduInstitutionLabel;
+	}
+
+	public static String getEdIstigametLabel() {
+		return edIstigametLabel;
+	}
+
+
+	public static String getEdMajorLabel() {
+		return edMajorLabel;
+	}
+
+	public static String getEdEduTypeLabel() {
+		return edEduTypeLabel;
+	}
+
+	public static String getEdDipNumLabel() {
+		return edDipNumLabel;
+	}
+
 
 }

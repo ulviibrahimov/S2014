@@ -17,9 +17,10 @@
 <fullyQualifiedTypeName name="android.view.View"/>
 <fullyQualifiedTypeName name="com.socar.hrsocar.model.Parameters"/>
 <fullyQualifiedTypeName name="com.socar.hrsocar.R.layout"/>
-<fullyQualifiedTypeName name="com.socar.hrsocar.adapter.DscpExpandableListAdapter"/>
 <fullyQualifiedTypeName name="com.socar.hrsocar.model.FmlItem"/>
 <fullyQualifiedTypeName name="com.socar.hrsocar.model.PrsnlItem"/>
 <fullyQualifiedTypeName name="java.util.ArrayList"/>
 <fullyQualifiedTypeName name="java.util.List"/>
+<fullyQualifiedTypeName name="com.socar.hrsocar.model.EdItem"/>
+<fullyQualifiedTypeName name="com.socar.hrsocar.adapter.DscpExpandableListAdapter"/>
 </qualifiedTypeNameHistroy>

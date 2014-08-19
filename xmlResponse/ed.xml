@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<soap-env:Envelope xmlns:soap-env="http://schemas.xmlsoap.org/soap/envelope/">
+    <soap-env:Header />
+    <soap-env:Body>
+        <n0:EducationInfoRResponse xmlns:n0="urn:sap-com:document:sap:soap:functions:mc-style">
+            <EEducationInfo>
+                <item>
+                    <Begda>2008-09-15</Begda>
+                    <Endda>2012-05-31</Endda>
+                    <Country>Azərbaycan</Country>
+                    <ScientificDegree>Yoxdur</ScientificDegree>
+                    <EduDegree>ali</EduDegree>
+                    <DocumentType>Diplom</DocumentType>
+                    <FinalGrade>BƏLI</FinalGrade>
+                    <EduInstitution>Azərbaycan Dövlət Neft Akademiyası</EduInstitution>
+                    <Istiqamet>avtomatlaşdırılmış sistemlərin və hesablama texnikasının proqram təminatı</Istiqamet>
+                    <Major>avtomatlaşdırılmış sistemlərin və hesablama texnikasının proqram təminatı</Major>
+                    <EduType>əyani</EduType>
+                    <Dipnum>2312311</Dipnum>
+                </item>
+                <item>
+                    <Begda>2012-09-01</Begda>
+                    <Endda>2013-06-30</Endda>
+                    <Country>Azərbaycan</Country>
+                    <ScientificDegree>Yoxdur</ScientificDegree>
+                    <EduDegree>yenidən hazırlanma</EduDegree>
+                    <DocumentType>Sertifikat</DocumentType>
+                    <FinalGrade>BƏLI</FinalGrade>
+                    <EduInstitution>"Qafqaz" Universiteti</EduInstitution>
+                    <Istiqamet />
+                    <Major />
+                    <EduType />
+                    <Dipnum />
+                </item>
+                <item>
+                    <Begda>2013-09-01</Begda>
+                    <Endda>2014-06-30</Endda>
+                    <Country>Azərbaycan</Country>
+                    <ScientificDegree>Yoxdur</ScientificDegree>
+                    <EduDegree>ixtisas artırma</EduDegree>
+                    <DocumentType>Sertifikat</DocumentType>
+                    <FinalGrade>BƏLI</FinalGrade>
+                    <EduInstitution />
+                    <Istiqamet />
+                    <Major />
+                    <EduType />
+                    <Dipnum />
+                </item>
+            </EEducationInfo>
+        </n0:EducationInfoRResponse>
+    </soap-env:Body>
+</soap-env:Envelope>
