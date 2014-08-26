@@ -55,6 +55,20 @@ public class Parameters {
 	private static String edMajorLabel="\t\tİxtisas: ";
 	private static String edEduTypeLabel="\t\tTəhsil forması: ";
 	private static String edDipNumLabel="\t\tDiplom nömrəsi: ";
+	
+	//Parameters for Labor Activity
+	/*private static String lbcBegdaLabel ="\t\tİşə qəbul tarixi: ";
+	private static String lbcEnddaLabel="\t\tİşdən azad olma tarixi: ";
+	private static String lbcSubtyLabel="\t\tİşdən azad : ";
+	private static String edScientificDegreeLabel="\t\tElmi dərəcə: ";
+	private static String edEduDegreeLabel="\t\tTəhsil: ";
+	private static String edDocumentTypeLabel="\t\tSənəd: ";
+	private static String edFinalGradeLabel="\t\tQiymət: ";
+	private static String edEduInstitutionLabel="\t\tTəhsil müəssisəsi: ";
+	private static String edIstigametLabel="\t\tİstiqamət: ";
+	private static String edMajorLabel="\t\tİxtisas: ";
+	private static String edEduTypeLabel="\t\tTəhsil forması: ";
+	private static String edDipNumLabel="\t\tDiplom nömrəsi: ";*/
 	public static String getRegUrl() {
 		return Parameters.regUrl;
 	}

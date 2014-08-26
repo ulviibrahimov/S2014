@@ -16,9 +16,10 @@ import android.widget.ExpandableListView;
 import com.socar.hrsocar.R;
 import com.socar.hrsocar.controller.WebserviceRequest;
 import com.socar.hrsocar.model.Parameters;
-//import com.socar.hrsocar.adapter.LbcExpandableListAdapter;
-//import com.socar.hrsocar.model.LbcItem;
-//import com.socar.hrsocar.parser.LaborParser;
+import com.socar.hrsocar.parser.LaborParser;
+import com.socar.hrsocar.adapter.DscpExpandableListAdapter;
+import com.socar.hrsocar.model.LbcItem;
+import com.socar.hrsocar.parser.LaborParser;
 
 public class LaborActivity extends Activity {
 	SharedPreferences sharedPreferences;
@@ -28,7 +29,7 @@ public class LaborActivity extends Activity {
 	private List<String[]> childValues=new ArrayList<String[]>();
 	private List<String> groupValues=new ArrayList<String>();
 	private List<String> ExpandableChildren;
-	//private List<LbcItem> lbcItemList= new ArrayList<LbcItem>();
+	private List<LbcItem> lbcItemList= new ArrayList<LbcItem>();
 	private Map<String,String> lbcParams;
 	private Map<String,List<String>> lbcAdapterParams;
 	private Integer lbcItemListSize;
@@ -50,12 +51,11 @@ public class LaborActivity extends Activity {
 			lbcPernr=sharedPreferences.getString(lbcPernrKey, null);
 			lbcParams.put("url", Parameters.getLbcUrl());
 			lbcParams.put("lbc_pernr", lbcPernr);
-			System.out.println("here");
 			WebserviceRequest webserviceRequest = new WebserviceRequest ();
 			lbcResponse=webserviceRequest.execute(lbcParams).get();
-			System.out.println("lbcc:"+lbcResponse);
-			//LaborParser disciplinaryParser = new LaborParser (lbcResponse);
-			//lbcItemList=disciplinaryParser.getResult();
+			LaborParser disciplinaryParser = new LaborParser (lbcResponse);
+			lbcItemList=disciplinaryParser.getResult();
+			System.out.println("lll"+lbcItemList.size());
 			/*if (lbcItemList !=null){
 		        for (int i=0;i<lbcItemList.size();i++){
 		        	tempChildValues=new String[3];
