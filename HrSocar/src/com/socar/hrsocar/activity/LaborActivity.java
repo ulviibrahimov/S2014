@@ -56,19 +56,31 @@ public class LaborActivity extends Activity {
 			LaborParser disciplinaryParser = new LaborParser (lbcResponse);
 			lbcItemList=disciplinaryParser.getResult();
 			System.out.println("lll"+lbcItemList.size());
-			/*if (lbcItemList !=null){
+			if (lbcItemList !=null){
 		        for (int i=0;i<lbcItemList.size();i++){
-		        	tempChildValues=new String[3];
-		        	tempChildValues[0]=Parameters.getLbcYsubtyLabel()+lbcItemList.get(i).getResult();
-		        	tempChildValues[1]=Parameters.getLbcStartDateLabel()+lbcItemList.get(i).getStartDate();
-		        	tempChildValues[2]=Parameters.getLbcEndDateLabel()+lbcItemList.get(i).getEndDate();
+		        	tempChildValues=new String[16];
+		        	tempChildValues[0]=Parameters.getLbcSubtyLabel()+lbcItemList.get(i).getSubty();
+		        	tempChildValues[1]=Parameters.getLbcBegdaLabel()+lbcItemList.get(i).getBegda();
+		        	tempChildValues[2]=Parameters.getLbcEnddaLabel()+lbcItemList.get(i).getEndda();
+		        	tempChildValues[3]=Parameters.getLbcCvtxtLabel()+lbcItemList.get(i).getCvtxt();
+		        	tempChildValues[4]=Parameters.getLbcCvtypLabel()+lbcItemList.get(i).getCvtyp();
+		        	tempChildValues[5]=Parameters.getLbcDeparLabel()+lbcItemList.get(i).getDepar();
+		        	tempChildValues[6]=Parameters.getLbcDurddLabel()+lbcItemList.get(i).getDurdd();
+		        	tempChildValues[7]=Parameters.getLbcDurmmLabel()+lbcItemList.get(i).getDurmm();
+		        	tempChildValues[8]=Parameters.getLbcDuryyLabel()+lbcItemList.get(i).getDuryy();
+		        	tempChildValues[9]=Parameters.getLbcPerskLabel()+lbcItemList.get(i).getPresk();
+		        	tempChildValues[10]=Parameters.getLbcPositLabel()+lbcItemList.get(i).getPosit();
+		        	tempChildValues[11]=Parameters.getLbcPtextLabel()+lbcItemList.get(i).getPtext();
+		        	tempChildValues[12]=Parameters.getLbcTrfs1Label()+lbcItemList.get(i).getTrfs1();
+		        	tempChildValues[13]=Parameters.getLbcwrkboLabel()+lbcItemList.get(i).getWrkbo();
+		        	tempChildValues[14]=Parameters.getLbcwrkopLabel()+lbcItemList.get(i).getWrkop();
 		        	childValues.add(tempChildValues);
-		        	groupValues.add(lbcItemList.get(i).getReason());
+		        	groupValues.add(lbcItemList.get(i).getSpheres1());
 		        }
 			
 			expandableListView = (ExpandableListView)findViewById(R.id.expandableListView1);
-	        expandableListView.setAdapter(new LbcExpandableListAdapter(context, this, childValues,groupValues));
-			}*/
+	        expandableListView.setAdapter(new DscpExpandableListAdapter(context, this, childValues,groupValues));
+			}
 		} catch (InterruptedException e) {
 			e.printStackTrace();
 		} catch (ExecutionException e) {

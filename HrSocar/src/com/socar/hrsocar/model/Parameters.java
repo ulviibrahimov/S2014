@@ -57,18 +57,22 @@ public class Parameters {
 	private static String edDipNumLabel="\t\tDiplom nömrəsi: ";
 	
 	//Parameters for Labor Activity
-	/*private static String lbcBegdaLabel ="\t\tİşə qəbul tarixi: ";
+	private static String lbcBegdaLabel ="\t\tİşə qəbul tarixi: ";
 	private static String lbcEnddaLabel="\t\tİşdən azad olma tarixi: ";
 	private static String lbcSubtyLabel="\t\tİşdən azad : ";
-	private static String edScientificDegreeLabel="\t\tElmi dərəcə: ";
-	private static String edEduDegreeLabel="\t\tTəhsil: ";
-	private static String edDocumentTypeLabel="\t\tSənəd: ";
-	private static String edFinalGradeLabel="\t\tQiymət: ";
-	private static String edEduInstitutionLabel="\t\tTəhsil müəssisəsi: ";
-	private static String edIstigametLabel="\t\tİstiqamət: ";
-	private static String edMajorLabel="\t\tİxtisas: ";
-	private static String edEduTypeLabel="\t\tTəhsil forması: ";
-	private static String edDipNumLabel="\t\tDiplom nömrəsi: ";*/
+	private static String lbcCvtypLabel="\t\tElmi dərəcə: ";
+	private static String lbcCvtxtLabel="\t\tTəhsil: ";
+	private static String lbcDuryyLabel="\t\tIllər: ";
+	private static String lbcDurmmLabel="\t\tAylar: ";
+	private static String lbcDurddLabel="\t\tGünlər: ";
+	private static String lbcwrkboLabel="\t\tİstiqamət: ";
+	private static String lbcwrkopLabel="\t\tİxtisas: ";
+	private static String lbcPositLabel="\t\tTəhsil forması: ";
+	private static String lbcSpheres1Label="\t\tDiplom nömrəsi: ";
+	private static String lbcPtextLabel="\t\tQiymət: ";
+	private static String lbcPerskLabel="\t\tTəhsil müəssisəsi: ";
+	private static String lbcTrfs1Label="\t\tİstiqamət: ";
+	private static String lbcDeparLabel="\t\tİxtisas: ";
 	public static String getRegUrl() {
 		return Parameters.regUrl;
 	}
@@ -243,6 +247,70 @@ public class Parameters {
 
 	public static String getEdDipNumLabel() {
 		return edDipNumLabel;
+	}
+
+	public static String getLbcBegdaLabel() {
+		return lbcBegdaLabel;
+	}
+
+	public static String getLbcEnddaLabel() {
+		return lbcEnddaLabel;
+	}
+
+	public static String getLbcSubtyLabel() {
+		return lbcSubtyLabel;
+	}
+
+	public static String getLbcCvtypLabel() {
+		return lbcCvtypLabel;
+	}
+
+	public static String getLbcCvtxtLabel() {
+		return lbcCvtxtLabel;
+	}
+
+	public static String getLbcDuryyLabel() {
+		return lbcDuryyLabel;
+	}
+
+	public static String getLbcDurmmLabel() {
+		return lbcDurmmLabel;
+	}
+
+	public static String getLbcDurddLabel() {
+		return lbcDurddLabel;
+	}
+
+	public static String getLbcwrkboLabel() {
+		return lbcwrkboLabel;
+	}
+
+	public static String getLbcwrkopLabel() {
+		return lbcwrkopLabel;
+	}
+
+	public static String getLbcPositLabel() {
+		return lbcPositLabel;
+	}
+
+	public static String getLbcSpheres1Label() {
+		return lbcSpheres1Label;
+	}
+
+	public static String getLbcPtextLabel() {
+		return lbcPtextLabel;
+	}
+
+	public static String getLbcPerskLabel() {
+		return lbcPerskLabel;
+	}
+
+	public static String getLbcTrfs1Label() {
+		return lbcTrfs1Label;
+	}
+
+	public static String getLbcDeparLabel() {
+		return lbcDeparLabel;
 	}
 
 
