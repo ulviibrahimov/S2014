@@ -9,49 +9,52 @@ public class Parameters {
 	private static String prsnlUrl ="http://192.168.1.192:8585/xml/prsnl.php";
 	private static String wrkUrl ="http://192.168.1.192:8585/xml/wrk.php";
 	private static String edUrl="http://192.168.1.192:8585/xml/ed.php";
-	
+	private static String absUrl="http://192.168.1.192:8585/xml/abs.php";
+	private static String lbcUrl="http://192.168.1.192:8585/xml/lbc.php";
+	private static String pyrlUrl="http://192.168.1.192:8585/xml/pyrl.php";
+	private static String lcsUrl="http://192.168.1.192:8585/xml/lcs.php";
 	//Parameters for FamilyActivity
-	private static String fmlNameLabel="- Ad: ";
-	private static String fmlSurnameLabel="- Soyad: ";
-	private static String fmlFatherNameLabel="- Ata adı: ";
-	private static String fmlBirthdayLabel="- Doğum tarixi: ";
+	private static String fmlNameLabel="\t\tAd: ";
+	private static String fmlSurnameLabel="\t\tSoyad: ";
+	private static String fmlFatherNameLabel="\t\tAta adı: ";
+	private static String fmlBirthdayLabel="\t\tDoğum tarixi: ";
 	
 	//Parameters for Disciplinary Activity
-	private static String dscpYsubtyLabel= "- Ysubty: ";
-	private static String dscpStartDateLabel="- Başlama tarixi: ";
-	private static String dscpEndDateLabel="- Bitmə tarixi: ";
+	private static String dscpYsubtyLabel= "Ysubty: ";
+	private static String dscpStartDateLabel="\t\tBaşlama tarixi: ";
+	private static String dscpEndDateLabel="\t\tBitmə tarixi: ";
 	
 	//Parameters for Personal Activity
-	private static String prsnlSerialNumberLabel= "- Seria nömrəsi: ";
-	private static String prsnlIssuanceDateLabel="- Vəsiqənin verilmə tarixi: ";
-	private static String prsnlIssuingAuthorityLabel="- Vəsiqəni verən orqan: ";
-	private static String prsnlExpirationDateLabel="- Etibarlıdır: ";
-	private static String prsnlPinCodeLabel="- Pin kod: ";	
+	private static String prsnlSerialNumberLabel= "\t\tVəsiqənin nömrəsi: ";
+	private static String prsnlIssuanceDateLabel="\t\tVerilmə tarixi: ";
+	private static String prsnlIssuingAuthorityLabel="\t\tVəsiqəni verən orqanın adı: ";
+	private static String prsnlExpirationDateLabel="\t\tEtibarlılıq müddəti: ";
+	private static String prsnlPinCodeLabel="\t\tVəsiqənin pinkodu: ";	
 	
 	//Parameters for Military Activity
-	private static String mltrSeriesLabel= "- Seria: ";
-	private static String mltrIdNumberLabel="- Id: ";
-	private static String mltrIssueDateLabel="- Verilmə tarixi: ";
-	private static String mltrExpiryDateLabel="- Etibarlıdır: ";
-	private static String mltrFitLabel="- Fit: ";	
-	private static String mltrGroupLabel= "- Qrup: ";
-	private static String mltrCategoryLabel="- Kateqoriya: ";
-	private static String mltrStaffLabel="- Heyət: ";
-	private static String mltrRankLabel="- Rütbə: ";
+	private static String mltrSeriesLabel= "\t\tSeriyası: ";
+	private static String mltrIdNumberLabel="\t\tNömrəsi: ";
+	private static String mltrIssueDateLabel="\t\tBaşlama tarixi: ";
+	private static String mltrExpiryDateLabel="\t\tBitmə tarixi: ";
+	private static String mltrFitLabel="\t\tYararlılıq: ";	
+	private static String mltrGroupLabel= "\t\tUçot qrupu: ";
+	private static String mltrCategoryLabel="\t\tKateqoriya: ";
+	private static String mltrStaffLabel="\t\tHeyəti: ";
+	private static String mltrRankLabel="\t\tHərbi Rütbə: ";
 	
 	//Parameters for Education activity
-	private static String edBegdaLabel ="- Başlama tarixi: ";
-	private static String edEnddaLabel="- Bitmə tarixi: ";
-	private static String edCountryLabel="- Ölkə: ";
-	private static String edScientificDegreeLabel="- Elmi dərəcə: ";
-	private static String edEduDegreeLabel="- Təhsil: ";
-	private static String edDocumentTypeLabel="- Sənəd: ";
-	private static String edFinalGradeLabel="- Qiymət: ";
-	private static String edEduInstitutionLabel="- Təhsil müəssisəsi: ";
-	private static String edIstigametLabel="- İstiqamət: ";
-	private static String edMajorLabel="- İxtisas: ";
-	private static String edEduTypeLabel="- Təhsil forması: ";
-	private static String edDipNumLabel="- Diplom nömrəsi: ";
+	private static String edBegdaLabel ="\t\tBaşlama tarixi: ";
+	private static String edEnddaLabel="\t\tBitmə tarixi: ";
+	private static String edCountryLabel="\t\tÖlkə: ";
+	private static String edScientificDegreeLabel="\t\tElmi dərəcə: ";
+	private static String edEduDegreeLabel="\t\tTəhsil: ";
+	private static String edDocumentTypeLabel="\t\tSənəd: ";
+	private static String edFinalGradeLabel="\t\tQiymət: ";
+	private static String edEduInstitutionLabel="\t\tTəhsil müəssisəsi: ";
+	private static String edIstigametLabel="\t\tİstiqamət: ";
+	private static String edMajorLabel="\t\tİxtisas: ";
+	private static String edEduTypeLabel="\t\tTəhsil forması: ";
+	private static String edDipNumLabel="\t\tDiplom nömrəsi: ";
 	public static String getRegUrl() {
 		return Parameters.regUrl;
 	}
@@ -59,7 +62,18 @@ public class Parameters {
 	public static String getDscpUrl() {
 		return Parameters.dscpUrl;
 	}
-	
+	public static String getLcsUrl() {
+		return Parameters.lcsUrl;
+	}
+	public static String getPyrlUrl() {
+		return Parameters.pyrlUrl;
+	}
+	public static String getLbcUrl() {
+		return Parameters.lbcUrl;
+	}
+	public static String getAbsUrl() {
+		return Parameters.absUrl;
+	}
 	public static String getMltrUrl() {
 		return Parameters.mltrUrl;
 	}

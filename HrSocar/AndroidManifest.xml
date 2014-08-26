@@ -58,8 +58,24 @@
             android:label="@string/title_activity_main" >
         </activity>
         <activity
-            android:name="com.socar.hrsocar.activity.EducationActivity"
+            android:name=".activity.EducationActivity"
             android:label="@string/title_activity_education" >
+        </activity>
+        <activity
+            android:name=".activity.AbsencesActivity"
+            android:label="@string/title_activity_absences" >
+        </activity>
+        <activity
+            android:name=".activity.PayrollActivity"
+            android:label="@string/title_activity_payroll" >
+        </activity>
+        <activity
+            android:name=".activity.LaborActivity"
+            android:label="@string/title_activity_labor" >
+        </activity>
+        <activity
+            android:name="com.socar.hrsocar.activity.LicenseActivity"
+            android:label="@string/title_activity_license" >
         </activity>
     </application>
 

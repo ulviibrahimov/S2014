@@ -12,6 +12,7 @@ import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.Window;
 import android.widget.ExpandableListView;
+import android.widget.TextView;
 
 import com.socar.hrsocar.R;
 import com.socar.hrsocar.adapter.DscpExpandableListAdapter;
@@ -50,22 +51,21 @@ public class MilitaryActivity extends Activity {
 			mltrResponse=webserviceRequest.execute(mltrParams).get();
 			MilitaryParser militaryParser = new MilitaryParser (mltrResponse);
 			mltrItemList=militaryParser.getResult();
-			for (int i=0;i<mltrItemList.size();i++){
+			if (mltrItemList.size()==1){
 				tempChildValues=new String[9];
-				tempChildValues[0]=Parameters.getMltrSeriesLabel()+mltrItemList.get(i).getSeries();
-				tempChildValues[1]=Parameters.getMltrIdNumberLabel()+mltrItemList.get(i).getIdNumber();
-				tempChildValues[2]=Parameters.getMltrIssueDateLabel()+mltrItemList.get(i).getIssueDate();
-				tempChildValues[3]=Parameters.getMltrExpiryDateLabel()+mltrItemList.get(i).getExpiryDate();
-				tempChildValues[4]=Parameters.getMltrFitLabel()+mltrItemList.get(i).getFit();
-				tempChildValues[5]=Parameters.getMltrGroupLabel()+mltrItemList.get(i).getGroup();
-				tempChildValues[6]=Parameters.getMltrCategoryLabel()+mltrItemList.get(i).getCategory();
-				tempChildValues[7]=Parameters.getMltrStaffLabel()+mltrItemList.get(i).getStaff();
-				tempChildValues[8]=Parameters.getMltrRankLabel()+mltrItemList.get(i).getRank();
-	        	childValues.add(tempChildValues);
-	        	groupValues.add("Hərbi bilet");
+				tempChildValues[0]=Parameters.getMltrSeriesLabel()+mltrItemList.get(0).getSeries()+"\n";
+				tempChildValues[1]=Parameters.getMltrIdNumberLabel()+mltrItemList.get(0).getIdNumber()+"\n";
+				tempChildValues[2]=Parameters.getMltrIssueDateLabel()+mltrItemList.get(0).getIssueDate()+"\n";
+				tempChildValues[3]=Parameters.getMltrExpiryDateLabel()+mltrItemList.get(0).getExpiryDate()+"\n";
+				tempChildValues[4]=Parameters.getMltrFitLabel()+mltrItemList.get(0).getFit()+"\n";
+				tempChildValues[5]=Parameters.getMltrGroupLabel()+mltrItemList.get(0).getGroup()+"\n";
+				tempChildValues[6]=Parameters.getMltrCategoryLabel()+mltrItemList.get(0).getCategory()+"\n";
+				tempChildValues[7]=Parameters.getMltrStaffLabel()+mltrItemList.get(0).getStaff()+"\n";
+				tempChildValues[8]=Parameters.getMltrRankLabel()+mltrItemList.get(0).getRank()+"\n";
+				TextView mltrTextView = (TextView)findViewById(R.id.MltrTextView);
+				mltrTextView.setText(tempChildValues[0]+tempChildValues[1]+tempChildValues[2]+tempChildValues[3]+tempChildValues[4]);
 			}
-			 expandableListView = (ExpandableListView)findViewById(R.id.expandableListView1);
-		     expandableListView.setAdapter(new DscpExpandableListAdapter(context, this, childValues,groupValues));
+			
 		} catch (InterruptedException e) {
 			e.printStackTrace();
 		} catch (ExecutionException e) {

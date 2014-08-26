@@ -59,12 +59,16 @@
         android:layout_height="0dp"
         android:layout_weight="0.65"
         android:orientation="vertical" >
-	 <ExpandableListView
-        android:id="@+id/expandableListView1"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent" >
-     </ExpandableListView>
 
+        <TextView
+            android:id="@+id/PrsnlTextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10px"
+            android:ems="10" >
+
+            <requestFocus />
+        </TextView>
 
     </LinearLayout>
 

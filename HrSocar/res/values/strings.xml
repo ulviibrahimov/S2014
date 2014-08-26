@@ -4,7 +4,7 @@
     <string name="app_name">HrSocar</string>
     <string name="title_activity_login">LoginActivity</string>
     <string name="my_profile">Mənim profilim</string>
-    <string name="detailed_info"> Atraflı məlumat</string>
+    <string name="detailed_info"> Ətraflı məlumat</string>
     <string name="title_activity_profile">ProfileActivity</string>
     <string name="title_activity_vacation">VacationActivity</string>
     <string name="fragment_header">ARDNŞ İnsan Resurslarının İdarə Edİlməsİ Portalı</string>
@@ -30,5 +30,9 @@
     <string name="title_activity_main">MainActivity</string>
     <string name="title_activity_education">EducationActivity</string>
     <string name="ed">Təhsil</string>
+    <string name="title_activity_absences">AbsencesActivity</string>
+    <string name="title_activity_payroll">PayrollActivity</string>
+    <string name="title_activity_labor">LaborActivity</string>
+    <string name="title_activity_license">LicenseActivity</string>
 
 </resources>

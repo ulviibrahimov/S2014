@@ -2,30 +2,30 @@
 <section name="Workbench">
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
 		<item value="false" key="isRegEx"/>
-		<item value="scientificTag" key="selection"/>
+		<item value="payroll" key="selection"/>
 		<item value="true" key="casesensitive"/>
 		<item value="false" key="incremental"/>
 		<item value="true" key="wrap"/>
 		<item value="false" key="wholeword"/>
 		<list key="findhistory">
-			<item value="ysubtyTag"/>
-			<item value="reasonsTag"/>
-			<item value="resultSb"/>
-			<item value="reasonsSb"/>
-			<item value="endDateSb"/>
-			<item value="startDateSb"/>
+			<item value="Labor"/>
+			<item value="Lbc"/>
+			<item value="lbc"/>
 			<item value="Disciplinary"/>
 			<item value="Dscp"/>
+			<item value="dscp"/>
+			<item value="- "/>
+			<item value="ysubtyTag"/>
 		</list>
 		<list key="replacehistory">
-			<item value="scientificTag"/>
-			<item value="countryTag"/>
-			<item value="scientificDegreeSb"/>
-			<item value="countrySb"/>
-			<item value="enddaSb"/>
-			<item value="begdaSb"/>
-			<item value="Education"/>
-			<item value="Ed"/>
+			<item value="payroll"/>
+			<item value="Pyrl"/>
+			<item value="pyrl"/>
+			<item value="Labor"/>
+			<item value="Lbc"/>
+			<item value="lbc"/>
+			<item value="Absences"/>
+			<item value="Abs"/>
 		</list>
 	</section>
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog_dialogBounds">

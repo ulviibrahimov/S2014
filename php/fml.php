@@ -9,7 +9,7 @@
 				</soapenv:Envelope>';
 
 
-		$server='http://socdev00.socar.local:8000/sap/bc/srt/rfc/sap/yws_family_info_r/430/yws_family_info_r/yws_family_info_r';
+		$server='http://socdev00.socar.local:8000/sap/bc/srt/rfc/sap/yws_laboractivity_r/430/yws_laboractivity_r/yws_laboractivity_r';
 	
 		$postfields = $str; 
 	

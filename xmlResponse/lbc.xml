@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<soap-env:Envelope xmlns:soap-env="http://schemas.xmlsoap.org/soap/envelope/">
+    <soap-env:Header />
+    <soap-env:Body>
+        <n0:LaboractivityRResponse xmlns:n0="urn:sap-com:document:sap:soap:functions:mc-style">
+            <ELabouractivity>
+                <item>
+                    <Subty>0007</Subty>
+                    <Cvtyp>0007</Cvtyp>
+                    <Cvtxt>Carı iş yeri</Cvtxt>
+                    <Duryy>7</Duryy>
+                    <Durmm>0</Durmm>
+                    <Durdd>26</Durdd>
+                    <Wrkbo>ИТ-I № 0963642</Wrkbo>
+                    <Wrkop>1982-12-23</Wrkop>
+                    <Posit>DDDDDDD</Posit>
+                    <Spheres1>İQTİSADİ SAHƏ</Spheres1>
+                    <Depar>DDDDDDDDDDDDD</Depar>
+                    <Ptext>mütəxəssis</Ptext>
+                    <Persk>SP</Persk>
+                    <Begda>2007-08-01</Begda>
+                    <Endda>9999-12-31</Endda>
+                    <Trfs1>13</Trfs1>
+                </item>
+                <item>
+                    <Subty>0001</Subty>
+                    <Cvtyp>0001</Cvtyp>
+                    <Cvtxt>Neft,qaz,kimya sənayesi (ARDNŞ daxil)</Cvtxt>
+                    <Duryy>2</Duryy>
+                    <Durmm>6</Durmm>
+                    <Durdd>0</Durdd>
+                    <Wrkbo>CVVMM</Wrkbo>
+                    <Wrkop>2013-03-07</Wrkop>
+                    <Posit>ÇILINGƏR</Posit>
+                    <Spheres1>İQTİSADİ SAHƏ</Spheres1>
+                    <Depar>RTUOO</Depar>
+                    <Ptext>fəhlə/saatlıq tarif</Ptext>
+                    <Persk>WH</Persk>
+                    <Begda>2005-02-01</Begda>
+                    <Endda>2007-07-31</Endda>
+                    <Trfs1>5</Trfs1>
+                </item>
+                <item>
+                    <Subty>0006</Subty>
+                    <Cvtyp>0006</Cvtyp>
+                    <Cvtxt>Neft,qaz,kimya sənayesi (ARDNŞ kənar)</Cvtxt>
+                    <Duryy>1</Duryy>
+                    <Durmm>0</Durmm>
+                    <Durdd>0</Durdd>
+                    <Wrkbo>ИТ-I № 0963642</Wrkbo>
+                    <Wrkop>1982-12-23</Wrkop>
+                    <Posit>DDDDDD</Posit>
+                    <Spheres1>İQTİSADİ SAHƏ</Spheres1>
+                    <Depar>DDDDDDDDDD</Depar>
+                    <Ptext>mütəxəssis</Ptext>
+                    <Persk>SP</Persk>
+                    <Begda>1999-01-01</Begda>
+                    <Endda>1999-12-31</Endda>
+                    <Trfs1>13</Trfs1>
+                </item>
+                <item>
+                    <Subty>0002</Subty>
+                    <Cvtyp>0002</Cvtyp>
+                    <Cvtxt>Digər sənaye sahəsi</Cvtxt>
+                    <Duryy>2</Duryy>
+                    <Durmm>0</Durmm>
+                    <Durdd>0</Durdd>
+                    <Wrkbo>ИТ-I № 0963642</Wrkbo>
+                    <Wrkop>1982-12-23</Wrkop>
+                    <Posit>DDDDDDDDDDDDDDD</Posit>
+                    <Spheres1>ELM VƏ ELMI XIDMƏT SAHƏSI</Spheres1>
+                    <Depar>DDDDDDDDDDD</Depar>
+                    <Ptext>rəhbər işçi</Ptext>
+                    <Persk>MG</Persk>
+                    <Begda>1994-01-01</Begda>
+                    <Endda>1995-12-31</Endda>
+                    <Trfs1 />
+                </item>
+            </ELabouractivity>
+        </n0:LaboractivityRResponse>
+    </soap-env:Body>
+</soap-env:Envelope>

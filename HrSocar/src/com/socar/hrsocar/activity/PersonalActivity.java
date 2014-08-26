@@ -12,6 +12,7 @@ import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.Window;
 import android.widget.ExpandableListView;
+import android.widget.TextView;
 
 import com.socar.hrsocar.R;
 import com.socar.hrsocar.adapter.DscpExpandableListAdapter;
@@ -55,20 +56,14 @@ public class PersonalActivity extends Activity {
 			prsnlResponse=webserviceRequest.execute(prsnlParams).get();
 			PersonalParser disciplinaryParser = new PersonalParser (prsnlResponse);
 			prsnlItemList=disciplinaryParser.getResult();
-			if (prsnlItemList !=null){
-		        for (int i=0;i<prsnlItemList.size();i++){
-		        	tempChildValues=new String[5];
-		        	tempChildValues[0]=Parameters.getprsnlSerialNumberLabel()+prsnlItemList.get(i).getSerialNumber();
-		        	tempChildValues[1]=Parameters.getprsnlIssuanceDateLabel()+prsnlItemList.get(i).getIssuanceDate();
-		        	tempChildValues[2]=Parameters.getprsnlIssuingAuthorityLabel()+prsnlItemList.get(i).getIssuingAuthority();
-		        	tempChildValues[3]=Parameters.getprsnlExpirationDateLabel()+prsnlItemList.get(i).getExpirationDate();
-		        	tempChildValues[4]=Parameters.getprsnlpinCodeLabel()+prsnlItemList.get(i).getPinCode();
-		        	childValues.add(tempChildValues);
-		        	groupValues.add("Şəxsiyyət Vəsiqəsi");
-		        }
-		        expandableListView = (ExpandableListView)findViewById(R.id.expandableListView1);
-		        expandableListView.setAdapter(new DscpExpandableListAdapter(context, this, childValues,groupValues));
-			}
+			tempChildValues=new String[5];
+        	tempChildValues[0]=Parameters.getprsnlSerialNumberLabel()+prsnlItemList.get(0).getSerialNumber()+"\n";
+        	tempChildValues[1]=Parameters.getprsnlIssuanceDateLabel()+prsnlItemList.get(0).getIssuanceDate()+"\n";
+        	tempChildValues[2]=Parameters.getprsnlIssuingAuthorityLabel()+prsnlItemList.get(0).getIssuingAuthority()+"\n";
+        	tempChildValues[3]=Parameters.getprsnlExpirationDateLabel()+prsnlItemList.get(0).getExpirationDate()+"\n";
+        	tempChildValues[4]=Parameters.getprsnlpinCodeLabel()+prsnlItemList.get(0).getPinCode()+"\n";
+        	TextView prsnlTextView = (TextView)findViewById(R.id.PrsnlTextView);
+        	prsnlTextView.setText(tempChildValues[0]+tempChildValues[1]+tempChildValues[2]+tempChildValues[3]+tempChildValues[4]);
 	} catch (InterruptedException e) {
 			e.printStackTrace();
 		} catch (ExecutionException e) {
