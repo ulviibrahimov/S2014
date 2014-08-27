@@ -14,10 +14,7 @@ import org.xml.sax.InputSource;
 import org.xml.sax.SAXException;
 import org.xml.sax.helpers.DefaultHandler;
 
-import com.socar.hrsocar.model.DscpItem;
-import com.socar.hrsocar.model.EdItem;
 import com.socar.hrsocar.model.LbcItem;
-import com.socar.hrsocar.model.PrsnlItem;
 
 public class LaborParser extends DefaultHandler{
 	private LbcItem lbcItem;
@@ -66,7 +63,8 @@ public class LaborParser extends DefaultHandler{
 			    String ptextTag="close";
 			    String perskTag="close";
 			    String trfs1Tag="close";
-			    public void startElement(String uri, String localName, String tagName,Attributes attributes) throws SAXException {  
+			    @Override
+				public void startElement(String uri, String localName, String tagName,Attributes attributes) throws SAXException {  
 			    	if (tagName.equalsIgnoreCase("item")) {  
 			    		lbcItemTag = "open";
 				    }
@@ -136,7 +134,8 @@ public class LaborParser extends DefaultHandler{
 			    		trfs1Sb=new StringBuilder();
 				    } 
 			    } 	
-			    public void characters(char ch[], int start, int length)throws SAXException { 
+			    @Override
+				public void characters(char ch[], int start, int length)throws SAXException { 
 			    	if (lbcItemTag.equals("open")) {  
 			    		if(newLbcItemFlag){
 				    		 lbcItem = new LbcItem();
@@ -257,7 +256,8 @@ public class LaborParser extends DefaultHandler{
 				     }
 			    }  
 			    
-			    public void endElement(String uri, String localName, String tagName)  
+			    @Override
+				public void endElement(String uri, String localName, String tagName)  
 			    	throws SAXException {  
 					   	if (tagName.equalsIgnoreCase("item")) {  
 					   		lbcItemTag = "close";    
@@ -305,7 +305,7 @@ public class LaborParser extends DefaultHandler{
 					   		lbcItem.setWrkop(wrkopSb.toString().trim());
 					   	}
 					   	if (tagName.equalsIgnoreCase("posit")) {  
-					   		positTag = "close";  
+					   		positTag = "close"; 
 					   		lbcItem.setPosit(positSb.toString().trim());
 					   	}
 					   	if (tagName.equalsIgnoreCase("spheres1")) {  
@@ -314,7 +314,7 @@ public class LaborParser extends DefaultHandler{
 					   	}
 					   	if (tagName.equalsIgnoreCase("depar")) {  
 					   		deparTag = "close";  
-					   		lbcItem.setPosit(deparSb.toString().trim());
+					   		lbcItem.setDepar(deparSb.toString().trim());
 					   	}
 					   	if (tagName.equalsIgnoreCase("ptext")) {  
 					   		ptextTag = "close";  
@@ -323,6 +323,10 @@ public class LaborParser extends DefaultHandler{
 					   	if (tagName.equalsIgnoreCase("persk")) {  
 					   		perskTag = "close";  
 					   		lbcItem.setPersk(perskSb.toString().trim());
+					   	}
+					   	if (tagName.equalsIgnoreCase("trfs1")) {  
+					   		trfs1Tag = "close";  
+					   		lbcItem.setTrfs1(trfs1Sb.toString().trim());
 					   	}
 			    	}  
 				};

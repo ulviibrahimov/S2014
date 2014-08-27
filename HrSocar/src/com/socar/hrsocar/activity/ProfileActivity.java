@@ -37,7 +37,8 @@ public class ProfileActivity extends Activity {
 	    listAdapter = new ArrayAdapter<String>(this, R.layout.simplerow, planetList);
 	    mainListView.setAdapter( listAdapter );      
 	    mainListView.setOnItemClickListener(new OnItemClickListener() {
-	        public void onItemClick(AdapterView<?> parent, View view,
+	        @Override
+			public void onItemClick(AdapterView<?> parent, View view,
 	                int position, long id) {
 	        	switch(position){
 	        	case 0:
@@ -91,7 +92,8 @@ public class ProfileActivity extends Activity {
 	    	exitAlert.setTitle("Çıxış");
 	    	exitAlert.setMessage("Çıxmaq istədiyinizdən əminsinizmi?");
 	    	exitAlert.setPositiveButton("Ok", new DialogInterface.OnClickListener() {
-	    	public void onClick(DialogInterface dialog, int whichButton) {
+	    	@Override
+			public void onClick(DialogInterface dialog, int whichButton) {
 	    		finish();
 	    		SharedPreferences sharedPreferences = getSharedPreferences(MyPREFERENCES, Context.MODE_PRIVATE);
 	    		sharedPreferences.edit().clear().commit();
@@ -99,7 +101,8 @@ public class ProfileActivity extends Activity {
 	    	  }
 	    	});
 	        	exitAlert.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
-	    	  public void onClick(DialogInterface dialog, int whichButton) {
+	    	  @Override
+			public void onClick(DialogInterface dialog, int whichButton) {
 	    	    // Canceled.
 	    	  }
 	    	});

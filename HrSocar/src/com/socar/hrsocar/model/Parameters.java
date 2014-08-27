@@ -73,6 +73,14 @@ public class Parameters {
 	private static String lbcPerskLabel="\t\tTəhsil müəssisəsi: ";
 	private static String lbcTrfs1Label="\t\tİstiqamət: ";
 	private static String lbcDeparLabel="\t\tİxtisas: ";
+	
+	//Parametrs for License Activity
+	private static String LcsSeriesLabel ="\t\tSeriya: ";
+	private static String LcsSerialNumberLabel ="\t\tSeriya nömrəsi: ";
+	private static String LcsIssuanceDateLabel ="\t\tVerilmə tarixi: ";
+	private static String LcsIssuingAuthorityLabel ="\t\tVəsiqəni verən orqanın adı: ";
+	private static String LcsExpirationDateLabel ="\t\tEtibarlıdır: ";
+	private static String LcsCategoryLabel ="\t\tKateqoriya: ";
 	public static String getRegUrl() {
 		return Parameters.regUrl;
 	}
@@ -311,6 +319,50 @@ public class Parameters {
 
 	public static String getLbcDeparLabel() {
 		return lbcDeparLabel;
+	}
+
+	public static String getPrsnlSerialNumberLabel() {
+		return prsnlSerialNumberLabel;
+	}
+
+	public static String getPrsnlIssuanceDateLabel() {
+		return prsnlIssuanceDateLabel;
+	}
+
+	public static String getPrsnlIssuingAuthorityLabel() {
+		return prsnlIssuingAuthorityLabel;
+	}
+
+	public static String getPrsnlExpirationDateLabel() {
+		return prsnlExpirationDateLabel;
+	}
+
+	public static String getPrsnlPinCodeLabel() {
+		return prsnlPinCodeLabel;
+	}
+
+	public static String getLcsSeriesLabel() {
+		return LcsSeriesLabel;
+	}
+
+	public static String getLcsSerialNumberLabel() {
+		return LcsSerialNumberLabel;
+	}
+
+	public static String getLcsIssuingAuthorityLabel() {
+		return LcsIssuingAuthorityLabel;
+	}
+
+	public static String getLcsExpirationDateLabel() {
+		return LcsExpirationDateLabel;
+	}
+
+	public static String getLcsCategoryLabel() {
+		return LcsCategoryLabel;
+	}
+
+	public static String getLcsIssuanceDateLabel() {
+		return LcsIssuanceDateLabel;
 	}
 
 

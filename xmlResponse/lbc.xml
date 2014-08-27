@@ -59,16 +59,16 @@
                     <Trfs1>13</Trfs1>
                 </item>
                 <item>
-                    <Subty>0002</Subty>
-                    <Cvtyp>0002</Cvtyp>
-                    <Cvtxt>Digər sənaye sahəsi</Cvtxt>
-                    <Duryy>2</Duryy>
-                    <Durmm>0</Durmm>
-                    <Durdd>0</Durdd>
-                    <Wrkbo>ИТ-I № 0963642</Wrkbo>
-                    <Wrkop>1982-12-23</Wrkop>
-                    <Posit>DDDDDDDDDDDDDDD</Posit>
-                    <Spheres1>ELM VƏ ELMI XIDMƏT SAHƏSI</Spheres1>
+                    1<Subty>0002</Subty>
+                    1<Cvtyp>0002</Cvtyp>
+                    1<Cvtxt>Digər sənaye sahəsi</Cvtxt>
+                    1<Duryy>2</Duryy>
+                    1<Durmm>0</Durmm>
+                    1	<Durdd>0</Durdd>
+                    1<Wrkbo>ИТ-I № 0963642</Wrkbo>
+                    1<Wrkop>1982-12-23</Wrkop>
+                    1<Posit>DDDDDDDDDDDDDDD</Posit>
+                    1<Spheres1>ELM VƏ ELMI XIDMƏT SAHƏSI</Spheres1>
                     <Depar>DDDDDDDDDDD</Depar>
                     <Ptext>rəhbər işçi</Ptext>
                     <Persk>MG</Persk>

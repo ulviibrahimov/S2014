@@ -14,11 +14,9 @@ import android.view.Window;
 import android.widget.ExpandableListView;
 
 import com.socar.hrsocar.R;
-import com.socar.hrsocar.adapter.DscpExpandableListAdapter;
 import com.socar.hrsocar.controller.WebserviceRequest;
 //import com.socar.hrsocar.model.WrkItem;
 import com.socar.hrsocar.model.Parameters;
-import com.socar.hrsocar.parser.FamilyParser;
 
 public class WorkActivity extends Activity {
 

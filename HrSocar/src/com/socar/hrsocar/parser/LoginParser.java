@@ -26,13 +26,15 @@ public class LoginParser extends DefaultHandler{
 				SAXParser saxParser = saxParserFactory.newSAXParser();
 				DefaultHandler defaultHandler = new DefaultHandler(){
 				private String resultTag="close";	
-			    public void startElement(String uri, String localName, String tagName,Attributes attributes) throws SAXException {  
+			    @Override
+				public void startElement(String uri, String localName, String tagName,Attributes attributes) throws SAXException {  
 			    	if (tagName.equalsIgnoreCase("RResult")) {  
 					 	 resultTag = "open";  
 					   	 sb=new StringBuilder();
 				     }  
 			    } 	
-			    public void characters(char ch[], int start, int length)throws SAXException {  
+			    @Override
+				public void characters(char ch[], int start, int length)throws SAXException {  
 			    	if (resultTag.equals("open")) {  
 					 	 if (sb!=null) {
 					 	        for (int i=start; i<start+length; i++) {
@@ -42,7 +44,8 @@ public class LoginParser extends DefaultHandler{
 				     }  
 			    }  
 			    
-			    public void endElement(String uri, String localName, String tagName)  
+			    @Override
+				public void endElement(String uri, String localName, String tagName)  
 			    	throws SAXException {  
 					   	if (tagName.equalsIgnoreCase("RResult")) {  
 						      resultTag = "close";  

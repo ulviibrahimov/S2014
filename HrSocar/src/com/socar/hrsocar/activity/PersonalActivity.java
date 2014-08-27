@@ -15,7 +15,6 @@ import android.widget.ExpandableListView;
 import android.widget.TextView;
 
 import com.socar.hrsocar.R;
-import com.socar.hrsocar.adapter.DscpExpandableListAdapter;
 import com.socar.hrsocar.controller.WebserviceRequest;
 import com.socar.hrsocar.model.Parameters;
 import com.socar.hrsocar.model.PrsnlItem;

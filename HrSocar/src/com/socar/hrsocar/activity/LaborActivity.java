@@ -19,7 +19,6 @@ import com.socar.hrsocar.model.Parameters;
 import com.socar.hrsocar.parser.LaborParser;
 import com.socar.hrsocar.adapter.DscpExpandableListAdapter;
 import com.socar.hrsocar.model.LbcItem;
-import com.socar.hrsocar.parser.LaborParser;
 
 public class LaborActivity extends Activity {
 	SharedPreferences sharedPreferences;
@@ -55,7 +54,6 @@ public class LaborActivity extends Activity {
 			lbcResponse=webserviceRequest.execute(lbcParams).get();
 			LaborParser disciplinaryParser = new LaborParser (lbcResponse);
 			lbcItemList=disciplinaryParser.getResult();
-			System.out.println("lll"+lbcItemList.size());
 			if (lbcItemList !=null){
 		        for (int i=0;i<lbcItemList.size();i++){
 		        	tempChildValues=new String[16];
@@ -70,6 +68,7 @@ public class LaborActivity extends Activity {
 		        	tempChildValues[8]=Parameters.getLbcDuryyLabel()+lbcItemList.get(i).getDuryy();
 		        	tempChildValues[9]=Parameters.getLbcPerskLabel()+lbcItemList.get(i).getPresk();
 		        	tempChildValues[10]=Parameters.getLbcPositLabel()+lbcItemList.get(i).getPosit();
+		        	System.out.println("xxx"+tempChildValues[10]);
 		        	tempChildValues[11]=Parameters.getLbcPtextLabel()+lbcItemList.get(i).getPtext();
 		        	tempChildValues[12]=Parameters.getLbcTrfs1Label()+lbcItemList.get(i).getTrfs1();
 		        	tempChildValues[13]=Parameters.getLbcwrkboLabel()+lbcItemList.get(i).getWrkbo();
@@ -81,6 +80,7 @@ public class LaborActivity extends Activity {
 			expandableListView = (ExpandableListView)findViewById(R.id.expandableListView1);
 	        expandableListView.setAdapter(new DscpExpandableListAdapter(context, this, childValues,groupValues));
 			}
+			
 		} catch (InterruptedException e) {
 			e.printStackTrace();
 		} catch (ExecutionException e) {

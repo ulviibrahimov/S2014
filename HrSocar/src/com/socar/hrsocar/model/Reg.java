@@ -1,7 +1,5 @@
 package com.socar.hrsocar.model;
 
-import java.net.URL;
-
 public class Reg {
 	private String regUrl;
 	private String regEmail;

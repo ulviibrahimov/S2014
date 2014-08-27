@@ -15,7 +15,6 @@ import org.xml.sax.SAXException;
 import org.xml.sax.helpers.DefaultHandler;
 
 import com.socar.hrsocar.model.EdItem;
-import com.socar.hrsocar.model.EdItem;
 
 public class EducationParser extends DefaultHandler{
 	private EdItem edItem;
@@ -56,7 +55,8 @@ public class EducationParser extends DefaultHandler{
 			    String majorTag="close";
 			    String eduTypeTag="close";
 			    String dipnumTag="close";
-			    public void startElement(String uri, String localName, String tagName,Attributes attributes) throws SAXException {  
+			    @Override
+				public void startElement(String uri, String localName, String tagName,Attributes attributes) throws SAXException {  
 			    	if (tagName.equalsIgnoreCase("item")) {  
 			    		edItemTag = "open";
 				    }
@@ -110,7 +110,8 @@ public class EducationParser extends DefaultHandler{
 			    		dipnumSb=new StringBuilder();
 				    } 
 			    } 	
-			    public void characters(char ch[], int start, int length)throws SAXException { 
+			    @Override
+				public void characters(char ch[], int start, int length)throws SAXException { 
 			    	if (edItemTag.equals("open")) {  
 			    		if(newEdItemFlag){
 				    		 edItem = new EdItem();
@@ -203,7 +204,8 @@ public class EducationParser extends DefaultHandler{
 				     }
 			    }  
 			    
-			    public void endElement(String uri, String localName, String tagName)  
+			    @Override
+				public void endElement(String uri, String localName, String tagName)  
 			    	throws SAXException {  
 					   	if (tagName.equalsIgnoreCase("item")) {  
 					   		edItemTag = "close";    

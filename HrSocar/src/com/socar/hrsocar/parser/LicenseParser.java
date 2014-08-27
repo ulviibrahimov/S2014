@@ -14,54 +14,56 @@ import org.xml.sax.InputSource;
 import org.xml.sax.SAXException;
 import org.xml.sax.helpers.DefaultHandler;
 
-import com.socar.hrsocar.model.PrsnlItem;
+import com.socar.hrsocar.model.LcsItem;
 
-public class PersonalParser extends DefaultHandler{
-	private PrsnlItem prsnlItem;
-	List<PrsnlItem> prsnlItemList= new ArrayList<PrsnlItem>();
+	public class LicenseParser extends DefaultHandler{
+	private LcsItem lcsItem;
+	List<LcsItem> lcsItemList= new ArrayList<LcsItem>();
 	protected StringBuilder serialNumberSb;
 	protected StringBuilder issuanceDateSb;
 	protected StringBuilder issuingAuthoritySb;
 	protected StringBuilder expirationDateSb;
-	protected StringBuilder pinCodeSb;
-	boolean newPrsnlItemFlag=true;
+	protected StringBuilder categorySb;
+	protected StringBuilder seriesSb;
+	boolean newLcsItemFlag=true;
 	private String inputXml;
-	public PersonalParser(String inputXml) {
+	public LicenseParser(String inputXml) {
 		super();
 		this.inputXml = inputXml; 
 	}
-		public List<PrsnlItem> getResult(){
+		public List<LcsItem> getResult(){
 			try {
 				SAXParserFactory saxParserFactory = SAXParserFactory.newInstance(); 
 				SAXParser saxParser = saxParserFactory.newSAXParser();
 				DefaultHandler defaultHandler = new DefaultHandler(){
-				String prsnlItemTag="close";  
+				String lcsItemTag="close";  
 			    String serialNumberTag="close";
 			    String issuanceDateTag="close";  
 			    String issuingAuthorityTag="close";
 			    String expirationDateTag="close";
-			    String pinCodeTag="close";
+			    String categoryTag="close";
+			    String seriesTag="close";
 			    @Override
 				public void startElement(String uri, String localName, String tagName,Attributes attributes) throws SAXException {  
-			    	if (tagName.equalsIgnoreCase("EPersonalInfo")) {  
-			    		prsnlItemTag = "open";
+			    	if (tagName.equalsIgnoreCase("EDriversLicense")) {  
+			    		lcsItemTag = "open";
 				    }
 
-			    	if (tagName.equalsIgnoreCase("ID_SERIAL_NUMBER")) {  
+			    	if (tagName.equalsIgnoreCase("SERIAL_NUMBER")) {  
 			    		serialNumberTag = "open";
 			    		serialNumberSb=new StringBuilder();
 				    }  
 			    	
-			    	if (tagName.equalsIgnoreCase("ID_PIN_CODE")) {  
-			    		pinCodeTag = "open";
-			    		pinCodeSb=new StringBuilder();
+			    	if (tagName.equalsIgnoreCase("category")) {  
+			    		categoryTag = "open";
+			    		categorySb=new StringBuilder();
 				    }  
 			    	
-			    	if (tagName.equalsIgnoreCase("ID_ISSUANCE_DATE")) {  
+			    	if (tagName.equalsIgnoreCase("ISSUANCE_DATE")) {  
 			    		issuanceDateTag = "open";
 			    		issuanceDateSb=new StringBuilder();
 				    }
-			    	if (tagName.equalsIgnoreCase("ID_ISSUING_AUTHORITY")) {  
+			    	if (tagName.equalsIgnoreCase("ISSUING_AUTHORITY")) {  
 			    		issuingAuthorityTag = "open";
 			    		issuingAuthoritySb=new StringBuilder();
 				    }  
@@ -69,13 +71,17 @@ public class PersonalParser extends DefaultHandler{
 			    		expirationDateTag = "open";  
 			    		expirationDateSb=new StringBuilder();
 				    }
+			    	if (tagName.equalsIgnoreCase("series")) {  
+			    		seriesTag = "open";  
+			    		seriesSb=new StringBuilder();
+				    }
 			    } 	
 			    @Override
 				public void characters(char ch[], int start, int length)throws SAXException { 
-			    	if (prsnlItemTag.equals("open")) {  
-			    		if(newPrsnlItemFlag){
-				    		 prsnlItem = new PrsnlItem();
-				    		 newPrsnlItemFlag=false;
+			    	if (lcsItemTag.equals("open")) {  
+			    		if(newLcsItemFlag){
+				    		 lcsItem = new LcsItem();
+				    		 newLcsItemFlag=false;
 				    	 }
 				    }
 			    	if (serialNumberTag.equals("open")) {  
@@ -106,10 +112,17 @@ public class PersonalParser extends DefaultHandler{
 					    	    }
 					   	    }
 				     }
-			    	if (pinCodeTag.equals("open")) {  
-					 	 if (pinCodeSb!=null) {
+			    	if (categoryTag.equals("open")) {  
+					 	 if (categorySb!=null) {
 					 	        for (int i=start; i<start+length; i++) {
-					 	        	pinCodeSb.append(ch[i]);
+					 	        	categorySb.append(ch[i]);
+					    	    }
+					   	    }
+				     }
+			    	if (seriesTag.equals("open")) {  
+					 	 if (seriesSb!=null) {
+					 	        for (int i=start; i<start+length; i++) {
+					 	        	seriesSb.append(ch[i]);
 					    	    }
 					   	    }
 				     }
@@ -118,30 +131,34 @@ public class PersonalParser extends DefaultHandler{
 			    @Override
 				public void endElement(String uri, String localName, String tagName)  
 			    	throws SAXException {  
-					   	if (tagName.equalsIgnoreCase("EPersonalInfo")) {  
-					   		prsnlItemTag = "close";    
-						    newPrsnlItemFlag=true;
-						    prsnlItemList.add(prsnlItem);
+					   	if (tagName.equalsIgnoreCase("EDriversLicense")) {  
+					   		lcsItemTag = "close";    
+						    newLcsItemFlag=true;
+						    lcsItemList.add(lcsItem);
 					   	}  
-					   	if (tagName.equalsIgnoreCase("ID_SERIAL_NUMBER")) {  
+					   	if (tagName.equalsIgnoreCase("SERIAL_NUMBER")) {  
 					   		serialNumberTag = "close"; 
-					   		prsnlItem.setSerialNumber(serialNumberSb.toString().trim());
+					   		lcsItem.setSerialNumber(serialNumberSb.toString().trim());
 					   	}
-					   	if (tagName.equalsIgnoreCase("ID_ISSUANCE_DATE")) {  
+					   	if (tagName.equalsIgnoreCase("ISSUANCE_DATE")) {  
 					   		issuanceDateTag = "close";  
-					   		prsnlItem.setIssuanceDate(issuanceDateSb.toString().trim());
+					   		lcsItem.setIssuanceDate(issuanceDateSb.toString().trim());
 					   	}
-					   	if (tagName.equalsIgnoreCase("ID_ISSUING_AUTHORITY")) {  
+					   	if (tagName.equalsIgnoreCase("ISSUING_AUTHORITY")) {  
 					   		issuingAuthorityTag = "close";
-					   		prsnlItem.setIssuingAuthority(issuingAuthoritySb.toString().trim());
+					   		lcsItem.setIssuingAuthority(issuingAuthoritySb.toString().trim());
 					   	}
 					   	if (tagName.equalsIgnoreCase("EXPIRATION_DATE")) {  
 					   		expirationDateTag = "close";  
-					   		prsnlItem.setExpirationDate(expirationDateSb.toString().trim());
+					   		lcsItem.setExpirationDate(expirationDateSb.toString().trim());
 					   	}
-					   	if (tagName.equalsIgnoreCase("ID_PIN_CODE")) {  
-					   		pinCodeTag = "close";  
-					   		prsnlItem.setPinCode(pinCodeSb.toString().trim());
+					   	if (tagName.equalsIgnoreCase("category")) {  
+					   		categoryTag = "close";  
+					   		lcsItem.setCategory(categorySb.toString().trim());
+					   	}
+					   	if (tagName.equalsIgnoreCase("series")) {  
+					   		seriesTag = "close";  
+					   		lcsItem.setSeries(seriesSb.toString().trim());
 					   	}
 			    	}  
 				};
@@ -155,6 +172,6 @@ public class PersonalParser extends DefaultHandler{
 			} catch (SAXException e) {
 				e.printStackTrace();
 			}  
-		return prsnlItemList;
+		return lcsItemList;
 	}
 }

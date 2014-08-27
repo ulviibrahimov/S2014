@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<soap-env:Envelope xmlns:soap-env="http://schemas.xmlsoap.org/soap/envelope/">
+    <soap-env:Header />
+    <soap-env:Body>
+        <n0:DriversLicenseRResponse xmlns:n0="urn:sap-com:document:sap:soap:functions:mc-style">
+            <EDriversLicense>
+                <SERIES>AB</SERIES>
+                <SERIAL_NUMBER>777777</SERIAL_NUMBER>
+                <ISSUANCE_DATE>2002-05-01</ISSUANCE_DATE>
+                <ISSUING_AUTHORITY>DİN BDYPİ QİŞ - 3 Saylı ASAN x.m.</ISSUING_AUTHORITY>
+                <EXPIRATION_DATE>2012-08-07</EXPIRATION_DATE>
+                <CATEGORY>BC</CATEGORY>
+            </EDriversLicense>
+        </n0:DriversLicenseRResponse>
+    </soap-env:Body>
+</soap-env:Envelope>

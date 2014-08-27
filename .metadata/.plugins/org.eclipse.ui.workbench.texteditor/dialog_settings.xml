@@ -3,36 +3,36 @@
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
 		<item value="false" key="isRegEx"/>
 		<item value="" key="selection"/>
-		<item value="true" key="casesensitive"/>
+		<item value="false" key="casesensitive"/>
 		<item value="false" key="incremental"/>
 		<item value="true" key="wrap"/>
 		<item value="false" key="wholeword"/>
 		<list key="findhistory">
+			<item value="prsnl"/>
+			<item value="id_pin_code"/>
+			<item value="pinCodeTag"/>
+			<item value="pinCodeSb"/>
+			<item value="Prsnl"/>
+			<item value="posit"/>
 			<item value="work"/>
 			<item value="Labor"/>
-			<item value="Lbc"/>
-			<item value="lbc"/>
-			<item value="Disciplinary"/>
-			<item value="Dscp"/>
-			<item value="dscp"/>
-			<item value="- "/>
 		</list>
 		<list key="replacehistory">
+			<item value="category"/>
+			<item value="categoryTag"/>
+			<item value="categorySb"/>
+			<item value="Lcs"/>
+			<item value="lcs"/>
 			<item value="payroll"/>
 			<item value="Pyrl"/>
 			<item value="pyrl"/>
-			<item value="Labor"/>
-			<item value="Lbc"/>
-			<item value="lbc"/>
-			<item value="Absences"/>
-			<item value="Abs"/>
 		</list>
 	</section>
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog_dialogBounds">
 		<item value="330" key="DIALOG_WIDTH"/>
 		<item value="1|Ubuntu|11.0|0|GTK|1|" key="DIALOG_FONT_NAME"/>
-		<item value="456" key="DIALOG_HEIGHT"/>
-		<item value="1188" key="DIALOG_X_ORIGIN"/>
-		<item value="45" key="DIALOG_Y_ORIGIN"/>
+		<item value="484" key="DIALOG_HEIGHT"/>
+		<item value="1205" key="DIALOG_X_ORIGIN"/>
+		<item value="392" key="DIALOG_Y_ORIGIN"/>
 	</section>
 </section>

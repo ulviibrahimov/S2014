@@ -51,7 +51,8 @@ public class MilitaryParser extends DefaultHandler{
 		    String rankTag="close";
 		    String eMilitaryInfoTag="close";
 		    String educationInfoTag="close";
-		    public void startElement(String uri, String localName, String tagName,Attributes attributes) throws SAXException {  
+		    @Override
+			public void startElement(String uri, String localName, String tagName,Attributes attributes) throws SAXException {  
 		    	
 		    	if (tagName.equalsIgnoreCase("EMilitaryInfo")) {  
 		    		eMilitaryInfoTag = "open";
@@ -101,7 +102,8 @@ public class MilitaryParser extends DefaultHandler{
 		    		rankSb=new StringBuilder();
 			    }
 		    } 	
-		    public void characters(char ch[], int start, int length)throws SAXException { 
+		    @Override
+			public void characters(char ch[], int start, int length)throws SAXException { 
 		    	if (mltrItemTag.equals("open")) {  
 		    		if(newMltrItemFlag){
 			    		 mltrItem = new MltrItem();
@@ -174,7 +176,8 @@ public class MilitaryParser extends DefaultHandler{
 			     }
 		    }  
 		    
-		    public void endElement(String uri, String localName, String tagName)  
+		    @Override
+			public void endElement(String uri, String localName, String tagName)  
 		    	throws SAXException {  
 				   	if (tagName.equalsIgnoreCase("item") && eMilitaryInfoTag.equals("open") && educationInfoTag.equals("close")) {  
 				   		mltrItemTag = "close";    
