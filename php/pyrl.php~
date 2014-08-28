@@ -7,25 +7,25 @@
 					 <Deductionpayroll>
 						<!--Zero or more repetitions:-->
 						<item>
-						   <WageType>?</WageType>
-						   <WageTypeText>?</WageTypeText>
-						   <GrossPayAmount>?</GrossPayAmount>
-						   <Month>?</Month>
-						   <Year>?</Year>
+						   <WageType></WageType>
+						   <WageTypeText></WageTypeText>
+						   <GrossPayAmount></GrossPayAmount>
+						   <Month></Month>
+						   <Year></Year>
 						</item>
 					 </Deductionpayroll>
 					 <!--Optional:-->
 					 <Incomepayroll>
 						<!--Zero or more repetitions:-->
 						<item>
-						   <WageType>?</WageType>
-						   <WageTypeText>?</WageTypeText>
-						   <GrossPayAmount>?</GrossPayAmount>
-						   <Days>?</Days>
-						   <Hours>?</Hours>
-						   <Percent>?</Percent>
-						   <Month>?</Month>
-						   <Year>?</Year>
+						   <WageType></WageType>
+						   <WageTypeText></WageTypeText>
+						   <GrossPayAmount></GrossPayAmount>
+						   <Days></Days>
+						   <Hours></Hours>
+						   <Percent></Percent>
+						   <Month></Month>
+						   <Year></Year>
 						</item>
 					 </Incomepayroll>
 					 <!--Optional:-->
@@ -37,7 +37,7 @@
 			</soapenv:Envelope>';
 
 
-		$server='http://socdev00.socar.local:8000/sap/bc/srt/rfc/sap/yws_laboractivity_r/430/yws_laboractivity_r/yws_laboractivity_r';
+		$server='http://socdev00.socar.local:8000/sap/bc/srt/rfc/sap/yws_zpayrollresult_r/430/yws_zpayrollresult_r/yws_zpayrollresult_r';
 	
 		$postfields = $str; 
 	

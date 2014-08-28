@@ -7,25 +7,25 @@
 					 <Deductionpayroll>
 						<!--Zero or more repetitions:-->
 						<item>
-						   <WageType>?</WageType>
-						   <WageTypeText>?</WageTypeText>
-						   <GrossPayAmount>?</GrossPayAmount>
-						   <Month>?</Month>
-						   <Year>?</Year>
+						   <WageType></WageType>
+						   <WageTypeText></WageTypeText>
+						   <GrossPayAmount></GrossPayAmount>
+						   <Month></Month>
+						   <Year></Year>
 						</item>
 					 </Deductionpayroll>
 					 <!--Optional:-->
 					 <Incomepayroll>
 						<!--Zero or more repetitions:-->
 						<item>
-						   <WageType>?</WageType>
-						   <WageTypeText>?</WageTypeText>
-						   <GrossPayAmount>?</GrossPayAmount>
-						   <Days>?</Days>
-						   <Hours>?</Hours>
-						   <Percent>?</Percent>
-						   <Month>?</Month>
-						   <Year>?</Year>
+						   <WageType></WageType>
+						   <WageTypeText></WageTypeText>
+						   <GrossPayAmount></GrossPayAmount>
+						   <Days></Days>
+						   <Hours></Hours>
+						   <Percent></Percent>
+						   <Month></Month>
+						   <Year></Year>
 						</item>
 					 </Incomepayroll>
 					 <!--Optional:-->

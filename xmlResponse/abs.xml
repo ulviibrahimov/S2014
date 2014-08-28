@@ -3,7 +3,7 @@
     <soap-env:Header />
     <soap-env:Body>
         <n0:AbsencesRResponse xmlns:n0="urn:sap-com:document:sap:soap:functions:mc-style">
-            <EAbsence_0101>
+            <EAbsence_0101><!-Illik mezuniyyet ->
                 <item>
                     <Name>İllik məzuniyyət</Name>
                     <BusinessDays>0.0</BusinessDays>
@@ -28,7 +28,7 @@
                 </item>
             </EAbsence_0101>
             <EAbsence_0102 />
-            <EAbsence_0200>
+            <EAbsence_0200> <!-Xestelik mezuniyyeti -   201, 202 same>
                 <item>
                     <Name>Xəstəlik məzuniyyəti</Name>
                     <BusinessDays>3.0</BusinessDays>
@@ -58,7 +58,7 @@
             <EAbsence_0301 />
             <EAbsence_0400 />
             <EAbsence_0401 />
-            <EAbsence_0403>
+            <EAbsence_0403> <!- ->
                 <item>
                     <Name>Ezamiyyət</Name>
                     <BusinessDays>5.0</BusinessDays>
