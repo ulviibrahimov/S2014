@@ -19,7 +19,10 @@ import com.socar.hrsocar.controller.WebserviceRequest;
 import com.socar.hrsocar.model.DscpItem;
 import com.socar.hrsocar.model.Parameters;
 import com.socar.hrsocar.parser.DisciplinaryParser;
-
+/**
+ * @author ulvi
+ * This activity displays user's disciplinary actions
+ */
 public class DisciplinaryActivity extends Activity {
 	SharedPreferences sharedPreferences;
 	private String dscpPernr;

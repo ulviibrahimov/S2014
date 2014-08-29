@@ -1,77 +1,66 @@
 package com.socar.hrsocar.activity;
-
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-import java.util.concurrent.ExecutionException;
-
-import android.app.Activity;
+import android.app.DatePickerDialog;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.support.v4.app.FragmentActivity;
+import android.view.View;
 import android.view.Window;
-import android.widget.ExpandableListView;
-
+import android.widget.DatePicker;
+import android.widget.TextView;
 import com.socar.hrsocar.R;
-import com.socar.hrsocar.controller.WebserviceRequest;
-import com.socar.hrsocar.model.Parameters;
-//import com.socar.hrsocar.adapter.PyrlExpandableListAdapter;
-//import com.socar.hrsocar.model.PyrlItem;
-//import com.socar.hrsocar.parser.payrollParser;
-
-public class PayrollActivity extends Activity {
+public class PayrollActivity extends FragmentActivity {
 	SharedPreferences sharedPreferences;
-	private String pyrlPernr;
-	private String pyrlResponse;
-	private String[] tempChildValues;
-	private List<String[]> childValues=new ArrayList<String[]>();
-	private List<String> groupValues=new ArrayList<String>();
-	private List<String> ExpandableChildren;
-	//private List<PyrlItem> pyrlItemList= new ArrayList<PyrlItem>();
-	private Map<String,String> pyrlParams;
-	private Map<String,List<String>> pyrlAdapterParams;
-	private Integer pyrlItemListSize;
 	public static final String pyrlPernrKey = "pernrKey"; 
 	public static final String MyPREFERENCES = "MyPrefs" ;
     final Context context = this;
-    private ExpandableListView expandableListView;
-	@SuppressWarnings("unchecked")
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		this.requestWindowFeature(Window.FEATURE_NO_TITLE);
 		setContentView(R.layout.activity_payroll);
-		try {
-			pyrlParams= new HashMap <String,String>();
-			pyrlAdapterParams=new HashMap <String,List<String>>(); 
-			//TODO change to default preferences
-			sharedPreferences = getSharedPreferences(MyPREFERENCES, Context.MODE_PRIVATE);
-			pyrlPernr=sharedPreferences.getString(pyrlPernrKey, null);
-			pyrlParams.put("url", Parameters.getPyrlUrl());
-			pyrlParams.put("pyrl_pernr", pyrlPernr);
-			WebserviceRequest webserviceRequest = new WebserviceRequest ();
-			pyrlResponse=webserviceRequest.execute(pyrlParams).get();
-			System.out.println("pyrll"+pyrlResponse);
-			//payrollParser disciplinaryParser = new payrollParser (pyrlResponse);
-			//pyrlItemList=disciplinaryParser.getResult();
-			/*if (pyrlItemList !=null){
-		        for (int i=0;i<pyrlItemList.size();i++){
-		        	tempChildValues=new String[3];
-		        	tempChildValues[0]=Parameters.getPyrlYsubtyLabel()+pyrlItemList.get(i).getResult();
-		        	tempChildValues[1]=Parameters.getPyrlStartDateLabel()+pyrlItemList.get(i).getStartDate();
-		        	tempChildValues[2]=Parameters.getPyrlEndDateLabel()+pyrlItemList.get(i).getEndDate();
-		        	childValues.add(tempChildValues);
-		        	groupValues.add(pyrlItemList.get(i).getReason());
-		        }
-			
-			expandableListView = (ExpandableListView)findViewById(R.id.expandableListView1);
-	        expandableListView.setAdapter(new PyrlExpandableListAdapter(context, this, childValues,groupValues));
-			}*/
-		} catch (InterruptedException e) {
-			e.printStackTrace();
-		} catch (ExecutionException e) {
-			e.printStackTrace();
-		}
+	    TextView periodText = (TextView) findViewById(R.id.textViewPeriod);
+	    periodText.setText("Ay seçin");
+	    periodText.setOnClickListener(new View.OnClickListener() {
+	        @Override
+	        public void onClick(View v) {
+	        }
+	    		});
 	}
+	
+	
+	//this method is supposed to return a date Picker dialog without a day field, but it is not used
+    private DatePickerDialog createDialogWithoutDateField(){
+    DatePickerDialog dpd = new DatePickerDialog(this, null,2014,1, 24);
+    try{
+    java.lang.reflect.Field[] datePickerDialogFields = dpd.getClass().getDeclaredFields();
+    for (java.lang.reflect.Field datePickerDialogField : datePickerDialogFields) { 
+        if (datePickerDialogField.getName().equals("mDatePicker")) {
+            datePickerDialogField.setAccessible(true);
+            DatePicker datePicker = (DatePicker) datePickerDialogField.get(dpd);
+            java.lang.reflect.Field[] datePickerFields = datePickerDialogField.getType().getDeclaredFields();
+            for (java.lang.reflect.Field datePickerField : datePickerFields) {
+               if ("mDaySpinner".equals(datePickerField.getName())) {
+                  datePickerField.setAccessible(true);
+                  Object dayPicker = new Object();
+                  dayPicker = datePickerField.get(datePicker);
+                  ((View) dayPicker).setVisibility(View.GONE);
+               }
+               if ("mCalendar".equals(datePickerField.getName())) {
+                   datePickerField.setAccessible(true);
+                   Object calendarPicker = new Object();
+                   calendarPicker = datePickerField.get(datePicker);
+                   ((View) calendarPicker).setVisibility(View.GONE);
+                }
+            }
+         }
+
+      }
+    }catch(Exception ex){
+    }
+    return dpd;
+
+     }
+    
+
 }

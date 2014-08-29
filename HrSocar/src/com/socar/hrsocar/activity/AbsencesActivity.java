@@ -25,26 +25,14 @@ import com.socar.hrsocar.model.Parameters;
  * This activity displays user's absence information
  */
 public class AbsencesActivity extends Activity {
-	
-	//variable declaration
-	
 	SharedPreferences sharedPreferences;
 	private String absPernr;
 	private String absResponse;
-	private String[] tempChildValues;
-	private List<String[]> childValues=new ArrayList<String[]>();
-	private List<String> groupValues=new ArrayList<String>();
-	private List<String> ExpandableChildren;
-	//private List<AbsItem> absItemList= new ArrayList<AbsItem>();
 	private Map<String,String> absParams;
 	private Map<String,List<String>> absAdapterParams;
-	private Integer absItemListSize;
 	public static final String absPernrKey = "pernrKey"; 
 	public static final String MyPREFERENCES = "MyPrefs" ;
     final Context context = this;
-    private ExpandableListView expandableListView;
-    
-    
 	@SuppressWarnings("unchecked")
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -65,22 +53,6 @@ public class AbsencesActivity extends Activity {
 			WebserviceRequest webserviceRequest = new WebserviceRequest ();
 			absResponse=webserviceRequest.execute(absParams).get();
 			System.out.println("abss:"+absResponse);
-			//parsing the xml file
-			//AbsencesParser disciplinaryParser = new AbsencesParser (absResponse);
-			//absItemList=disciplinaryParser.getResult();
-			/*if (absItemList !=null){
-		        for (int i=0;i<absItemList.size();i++){
-		        	tempChildValues=new String[3];
-		        	tempChildValues[0]=Parameters.getAbsYsubtyLabel()+absItemList.get(i).getResult();
-		        	tempChildValues[1]=Parameters.getAbsStartDateLabel()+absItemList.get(i).getStartDate();
-		        	tempChildValues[2]=Parameters.getAbsEndDateLabel()+absItemList.get(i).getEndDate();
-		        	childValues.add(tempChildValues);
-		        	groupValues.add(absItemList.get(i).getReason());
-		        }
-			
-			expandableListView = (ExpandableListView)findViewById(R.id.expandableListView1);
-	        expandableListView.setAdapter(new AbsExpandableListAdapter(context, this, childValues,groupValues));
-			}*/
 		} catch (InterruptedException e) {
 			e.printStackTrace();
 		} catch (ExecutionException e) {

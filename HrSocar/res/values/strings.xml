@@ -35,5 +35,6 @@
     <string name="title_activity_labor">LaborActivity</string>
     <string name="title_activity_license">LicenseActivity</string>
     <string name="lcs">Sürücülük vəsiqəsi</string>
+    <string name="pyrl">Əmək haqqı</string>
 
 </resources>

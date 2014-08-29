@@ -19,9 +19,10 @@ import com.socar.hrsocar.controller.WebserviceRequest;
 import com.socar.hrsocar.model.EdItem;
 import com.socar.hrsocar.model.Parameters;
 import com.socar.hrsocar.parser.EducationParser;
-//import com.socar.hrsocar.model.EdItem;
-//import com.socar.hrsocar.parser.EducationParser;
-
+/**
+ * @author ulvi
+ * This activity displays user's education information
+ */
 public class EducationActivity extends Activity {
 	SharedPreferences sharedPreferences;
 	private String edPernr;

@@ -1,5 +1,9 @@
 package com.socar.hrsocar.activity;
 import java.util.HashMap;
+/**
+ * @author ulvi
+ * This activity displays login page with input fields
+ */
 import java.util.Map;
 import java.util.concurrent.ExecutionException;
 import android.app.Activity;

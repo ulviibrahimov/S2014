@@ -23,4 +23,14 @@
 <fullyQualifiedTypeName name="java.util.List"/>
 <fullyQualifiedTypeName name="com.socar.hrsocar.model.EdItem"/>
 <fullyQualifiedTypeName name="com.socar.hrsocar.adapter.DscpExpandableListAdapter"/>
+<fullyQualifiedTypeName name="javax.xml.datatype.DatatypeConstants.Field"/>
+<fullyQualifiedTypeName name="java.text.Format.Field"/>
+<fullyQualifiedTypeName name="java.text.DateFormat.Field"/>
+<fullyQualifiedTypeName name="java.lang.reflect.Field"/>
+<fullyQualifiedTypeName name="android.util.Log"/>
+<fullyQualifiedTypeName name="android.app.DatePickerDialog"/>
+<fullyQualifiedTypeName name="android.app.DialogFragment"/>
+<fullyQualifiedTypeName name="android.support.v4.app.DialogFragment"/>
+<fullyQualifiedTypeName name="com.socar.hrsocar.fragments.DatePickerFragment"/>
+<fullyQualifiedTypeName name="android.support.v4.app.FragmentActivity"/>
 </qualifiedTypeNameHistroy>
